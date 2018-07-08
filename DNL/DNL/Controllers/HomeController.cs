@@ -5,33 +5,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DNL.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DNL.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        [Authorize]
+        public IActionResult Index() => View(GetData(nameof(Index)));
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
+        [Authorize(Roles = "Users")]
+        public IActionResult OtherAction() => View("Index",
+            GetData(nameof(OtherAction)));
 
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        private Dictionary<string, object> GetData(string actionName) =>
+            new Dictionary<string, object>
+            {
+                ["Action"] = actionName,
+                ["User"] = HttpContext.User.Identity.Name,
+                ["Authenticated"] = HttpContext.User.Identity.IsAuthenticated,
+                ["Auth Type"] = HttpContext.User.Identity.AuthenticationType,
+                ["In Users Role"] = HttpContext.User.IsInRole("Users")
+            };
     }
 }
+

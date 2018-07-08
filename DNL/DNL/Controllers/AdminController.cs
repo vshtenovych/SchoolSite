@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLL.ViewModels;
 using EF.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DNL.Controllers
 {
+    [Authorize(Roles = "Admins")]
     public class AdminController : Controller
     {
         private UserManager<AppUser> userManager;
