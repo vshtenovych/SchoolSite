@@ -9,3 +9,7 @@ $('body').on('mouseenter mouseleave', '.navbar .dropdown', function (e) {
         menu[dropdown.is(':hover') ? 'addClass' : 'removeClass']('show');
     }, 100);
 });
+
+$(function () {
+    $("#news-item").first().addClass('active');
+});

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.ViewModels;
+using DNL.Helpers;
 using EF.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DNL.Controllers
 {
+    [ViewLayout("_ProfileLayout")]
     [Authorize(Roles = "Admins")]
     public class AdminController : Controller
     {

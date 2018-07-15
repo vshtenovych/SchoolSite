@@ -101,18 +101,18 @@
         <div class="row mx-auto my-auto">
             <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner w-100" role="listbox">
-                    <div class="carousel-item active">
+                    @*<div class="carousel-item active">
                         <div class="col-md-4">
                             <img class="d-block img-fluid" src="http://placehold.it/350x180?text=1">
                             <div class="date">10.10.10</div>
                             <h3>Af</h3>
                             <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
                         </div>
-                    </div>
+                    </div>*@
                     @{
                         foreach (var news in Model)
                         {
-                            <div class="carousel-item">
+                            <div class="carousel-item" id="news-item">
                                 <div class="col-md-4">
                                     <img class="d-block img-fluid" src="http://placehold.it/350x180?text=1">
                                     <div class="date">10.10.10</div>
@@ -122,46 +122,6 @@
                             </div>
                         }
                     }
-                    @*<div class="carousel-item">
-            <div class="col-md-4">
-                <img class="d-block img-fluid" src="http://placehold.it/350x180?text=2">
-                <div class="date">10.10.10</div>
-                <h3>News title</h3>
-                <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-4">
-                <img class="d-block img-fluid" src="http://placehold.it/350x180?text=3">
-                <div class="date">10.10.10</div>
-                <h3>News title</h3>
-                <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-4">
-                <img class="d-block img-fluid" src="http://placehold.it/350x180?text=4">
-                <div class="date">10.10.10</div>
-                <h3>News title</h3>
-                <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-4">
-                <img class="d-block img-fluid" src="http://placehold.it/350x180?text=5">
-                <div class="date">10.10.10</div>
-                <h3>News title</h3>
-                <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-4">
-                <img class="d-block img-fluid" src="http://placehold.it/350x180?text=6">
-                <div class="date">10.10.10</div>
-                <h3>News title</h3>
-                <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
-            </div>
-        </div>*@
                 </div>
                 <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

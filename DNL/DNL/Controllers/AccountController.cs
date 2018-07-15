@@ -22,16 +22,14 @@ namespace DNL.Controllers
             signInManager = signinMgr;
         }
         [AllowAnonymous]
-        public IActionResult Login(string returnUrl)
+        public IActionResult Login()
         {
-            ViewBag.returnUrl = returnUrl;
             return View();
         }
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel details,
-        string returnUrl)
+        public async Task<IActionResult> Login(LoginViewModel details)
         {
             if (ModelState.IsValid)
             {
@@ -44,11 +42,10 @@ namespace DNL.Controllers
                     user, details.Password, false, false);
                     if (result.Succeeded)
                     {
-                        return Redirect(returnUrl ?? "/");
+                        return RedirectToAction("Index", "Profile");
                     }
                 }
-                ModelState.AddModelError(nameof(LoginViewModel.Email),
-                "Invalid user or password");
+                ModelState.AddModelError(nameof(LoginViewModel.Email), "Invalid user or password");
             }
             return View(details);
         }

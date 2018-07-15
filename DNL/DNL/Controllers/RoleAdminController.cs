@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using BLL.ViewModels;
+using DNL.Helpers;
 
 namespace DNL.Controllers
 {
+    [ViewLayout("_ProfileLayout")]
     [Authorize(Roles = "Admins")]
     public class RoleAdminController : Controller
     {
