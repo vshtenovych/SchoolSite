@@ -11,6 +11,8 @@ namespace EF
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
+        public DbSet<News> News { get; set; }
+
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options)
         : base(options) { }
 

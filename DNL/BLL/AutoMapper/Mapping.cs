@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BLL.ViewModels;
+using EF.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +16,7 @@ namespace BLL.AutoMapper
         static Mapping()
         {
             Mapper.Initialize(config => {
-                
+
                 //config.CreateMap<CompanyViewModel, Company>()
                 //.ForMember(company => company.Name, conf => conf.MapFrom(companyViewModel => companyViewModel.CompanyName))
                 //.ForMember(company => company.Photo, conf => conf.MapFrom(companyViewModel => companyViewModel.CompanyLogoSource))
@@ -26,6 +28,9 @@ namespace BLL.AutoMapper
                 //.ForMember(companyViewModel => companyViewModel.CompanyLogoSource, conf => conf.MapFrom(company => company.Photo))
                 //.ForMember(companyViewModel => companyViewModel.WhoWeAreText, conf => conf.MapFrom(company => company.Intro))
                 //.ForMember(companyViewModel => companyViewModel.Vacancies, conf => conf.MapFrom(company => company.Jobs));
+
+                config.CreateMap<NewsViewModel, News>();
+                config.CreateMap<News, NewsViewModel>();
             
             });
         }

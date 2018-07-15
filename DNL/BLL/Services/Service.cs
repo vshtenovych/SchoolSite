@@ -11,8 +11,8 @@ namespace BLL.Services
     {
         public IUnitOfWork Database { get; set; }
         private readonly IRepository<TEntity> _repository;
-        private IUnitOfWork unitOfWork;
-        //private IRepository<Skill> skills;
+        //private IUnitOfWork unitOfWork;
+        //private IRepository<News> skills;
 
         public Service(IUnitOfWork unitOfWork, IRepository<TEntity> repository)
         {

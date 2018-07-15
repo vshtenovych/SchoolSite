@@ -1,0 +1,29 @@
+﻿@model NewsViewModel
+<div class="bg-primary m-1 p-1 text-center"><h4>Create Category</h4></div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortDescription"></label>
+        <input asp-for="ShortDescription" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LongDescription"></label>
+        <input asp-for="LongDescription" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfPost"></label>
+        <input asp-for="DateOfPost" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo"></label>
+        <input asp-for="Photo" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

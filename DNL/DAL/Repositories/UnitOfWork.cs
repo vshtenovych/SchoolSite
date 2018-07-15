@@ -1,5 +1,6 @@
 ﻿using DAL.Interfaces;
 using EF;
+using EF.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,8 @@ namespace DAL.Repositories
     {
         private readonly AppIdentityDbContext _context;
 
-        //private IRepository<Company> _companiesRepository;
+        private IRepository<News> _newsRepository;
+
 
 
         public UnitOfWork(AppIdentityDbContext context)
@@ -18,8 +20,7 @@ namespace DAL.Repositories
             _context = context;
         }
 
-        //public IRepository<Company> Companies => _companiesRepository ?? (_companiesRepository = new Repository<Company>(_context.Companies));
-
+        public IRepository<News> News => _newsRepository ?? (_newsRepository = new Repository<News>(_context.News));
 
         public void Save()
         {

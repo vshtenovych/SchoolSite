@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Interfaces;
+using BLL.Services;
+using DAL.Interfaces;
+using DAL.Repositories;
 using EF;
 using EF.Entities;
 using Microsoft.AspNetCore.Builder;
@@ -25,6 +29,11 @@ namespace DNL
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add application services.
+            services.AddTransient<INewsService, NewsService>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+
             // connect to db
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlServer(Configuration["Data:ConnectionString"]));
@@ -61,6 +70,8 @@ namespace DNL
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            //app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
             app.UseMvc(routes =>
             {

@@ -19,8 +19,6 @@ var libs = [
     "node_modules/jquery-validation/dist/jquery.validate.js",
     "node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
     "node_modules/tether/dist/js/tether.js",
-    "node_modules/bootstrap/dist/js/bootstrap.js",
-    "node_modules/bootstrap/dist/css/bootstrap.css",
     "node_modules/css-toggle-switch/dist/toggle-switch.css",
     "node_modules/font-awesome/css/font-awesome.min.css",
     "node_modules/tether/dist/js/tether.min.js"
