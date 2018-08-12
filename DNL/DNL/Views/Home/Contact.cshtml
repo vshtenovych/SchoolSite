@@ -1,17 +1,53 @@
-﻿@{
-    ViewData["Title"] = "Contact";
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/home.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/home.contact.css" />
+    </environment>
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="row">
+    <div class="col-md-12">
+        <div class="heading">
+            <h2>Контакти</h2>
+        </div>
+    </div>
+</div>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-row"><i class="fas fa-phone"></i> Телефон: +38 (03477) 2-00-81</div>
+            <div class="text-row"><i class="fas fa-envelope"></i> Електронна пошта: info@dnl.edu.ua</div>
+
+            <div class="title" id="fill-the-form">Форма зворотнього зв'язку</div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ім'я*">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Email*">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" placeholder="Ваше повідомлення"></textarea>
+            </div>
+
+            <button class="btn send" type="submit">Відправити</button>
+        </div>
+        <div class="col-md-6">
+            <div class="title"><i class="fas fa-map-marker-alt"></i> вулиця Пачовського, 3, Долина, Івано-Франківська область, 77500</div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2619.3895964556723!2d24.001340391975518!3d48.965107707483014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473a061fac686113%3A0xedad2d99d3979721!2z0JTQvtC70LjQvdGB0YzQutCwINCz0ZbQvNC90LDQt9GW0Y8g4oSWIDE!5e0!3m2!1suk!2sua!4v1531150226761" width="100%" height="350" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}

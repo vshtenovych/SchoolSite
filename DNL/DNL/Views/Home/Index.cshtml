@@ -1,17 +1,14 @@
-﻿
-@section CssFiles {
+﻿@section CssFiles {
     <environment include="Staging, Production">
-        <link type="text/css" rel="stylesheet" href="~/css/bundles/company-profile.min.css" />
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/home.min.css" />
     </environment>
 
     <environment include="Development">
         <link type="text/css" rel="stylesheet" href="~/css/home.index.css" />
-        <link type="text/css" rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     </environment>
 }
 
 @model IEnumerable<NewsViewModel>
-
 
 <!-- Слайдер -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -22,17 +19,27 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="~/images/slider/school.jpg" alt="First slide">
-            <div class="header-text hidden-xs">
-                <div class="col-md-12 text-center">
-                    <h1>Долинський науковий ліцей #1</h1>
-                    <br>
-                    <h3>Освіта - найвеличніше з усіх земних благ, але тільки тоді, коли вона найвищої якості. Інакше вона абсолютно<br> даремна.  © Редьярд Кіплінг</h3>
-                    <a class="btn" id="about-us-button" href="about-us.html" role="button">Про нас</a>
+            <div class="header-text row justify-content-center">
+                <div class="col-md-9">
+                    <center>
+                        <h1>Долинський науковий ліцей #1</h1>
+                        <h3>Освіта - найвеличніше з усіх земних благ, але тільки тоді, коли вона найвищої якості. Інакше вона абсолютно даремна.  © Редьярд Кіплінг</h3>
+                        <a class="btn" id="about-us-button" asp-action="About" role="button">Про нас</a>
+                    </center>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="img/slider/slide2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="~/images/slider/school.jpg" alt="Second slide">
+            <div class="header-text row justify-content-center">
+                <div class="col-md-9">
+                    <center>
+                        <h1>Долинський науковий ліцей #1</h1>
+                        <h3>Наш ДЕВІЗ БИТИ В НІС КРОВ ТЕЧЕ БИТИ ЩЕ, А ЯК ДУЖИ СИЛЬНА КРОВОТЕЧА БИТИ ПАЛКОЮ ПО ПЛЕЧАХ!!!!!!!!!!</h3>
+                        <a class="btn" asp-action="About" id="about-us-button" role="button">Про нас</a>
+                    </center>
+                </div>
+            </div>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -50,23 +57,23 @@
 <section id="important-links">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md">
+            <div class="col-md-3 col-sm-3 col-6">
                 <center>
-                    <a href="">
+                    <a href="timetable.html">
                         <img class="implnk-icon" src="~/images/menu/timetable.png">
                         <div class="important-links_title">Розклад</div>
                     </a>
                 </center>
             </div>
-            <div class="col-md">
+            <div class="col-md-3 col-sm-3 col-6">
                 <center>
-                    <a href="">
+                    <a href="mr.html">
                         <img class="implnk-icon" src="~/images/menu/methodical_work.png">
                         <div class="important-links_title">Методична робота</div>
                     </a>
                 </center>
             </div>
-            <div class="col-md">
+            <div class="col-md-3 col-sm-3 col-6">
                 <center>
                     <a href="vr.html">
                         <img class="implnk-icon" src="~/images/menu/educational_activities.png">
@@ -74,9 +81,9 @@
                     </a>
                 </center>
             </div>
-            <div class="col-md">
+            <div class="col-md-3 col-sm-3 col-6">
                 <center>
-                    <a href="#">
+                    <a href="achievements.html">
                         <img class="implnk-icon" src="~/images/menu/our_achievements.png">
                         <div class="important-links_title">Наші досягнення</div>
                     </a>
@@ -85,6 +92,8 @@
         </div>
     </div>
 </section>
+
+
 
 <!-- News -->
 <div class="row">
@@ -97,27 +106,33 @@
 
 <!-- News slider -->
 <div id="news-carousel">
+
     <div class="container text-center my-3">
         <div class="row mx-auto my-auto">
             <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#recipeCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="1"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="2"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="3"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="4"></li>
+                    <li data-target="#recipeCarousel" data-slide-to="5"></li>
+                </ol>
                 <div class="carousel-inner w-100" role="listbox">
-                    @*<div class="carousel-item active">
-                        <div class="col-md-4">
-                            <img class="d-block img-fluid" src="http://placehold.it/350x180?text=1">
-                            <div class="date">10.10.10</div>
-                            <h3>Af</h3>
-                            <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
-                        </div>
-                    </div>*@
                     @{
-                        foreach (var news in Model)
+                        foreach (var item in Model)
                         {
+                            var newsPhoto = "../images/Profile.jpg";
+                            if (!string.IsNullOrEmpty(item.Photo))
+                            {
+                                newsPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+                            }
                             <div class="carousel-item" id="news-item">
                                 <div class="col-md-4">
-                                    <img class="d-block img-fluid" src="http://placehold.it/350x180?text=1">
-                                    <div class="date">10.10.10</div>
-                                    <h3>@news.Title</h3>
-                                    <h5>Here must be more information. Lorem ipsum dolor sit aler</h5>
+                                    <img class="d-block img-fluid" src="@newsPhoto">
+                                    <div class="date">@item.DateOfPost.ToString("dd.MM.yyyy")</div>
+                                    <h3>@item.Title</h3>
+                                    <h5>@item.ShortDescription</h5>
                                 </div>
                             </div>
                         }
@@ -136,10 +151,22 @@
     </div>
 </div>
 
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-md-auto col-12">
+            <a asp-controller="News" asp-action="AllNews" class="all-news-link">Всі новини</a>
+        </div>
+    </div>
+</div>
+
 
 @section JsFiles {
 
-    <script src="~/lib/jquery.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="~/js/home.index.js" type="text/javascript"></script>
+    <environment include="Staging, Production">
+        <script src="~/js/bundles/home.min.js" type="text/javascript"></script>
+    </environment>
+
+    <environment include="Development">
+        <script src="~/js/home.index.js" type="text/javascript"></script>
+    </environment>
 }

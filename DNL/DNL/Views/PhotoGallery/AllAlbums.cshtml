@@ -1,0 +1,56 @@
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/gallery.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/gallery.albums.css" />
+    </environment>
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="heading adaptive-heading">
+            <h2>Фотогалерея</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <figure>
+                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
+                <figcaption>Старі фотографії</figcaption>
+            </figure>
+        </div>
+        <div class="col-md-3  col-6">
+            <figure>
+                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
+                <figcaption>Старі фотографії</figcaption>
+            </figure>
+        </div>
+        <div class="col-md-3 col-6">
+            <figure>
+                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
+                <figcaption>Старі фотографії</figcaption>
+            </figure>
+        </div>
+        <div class="col-md-3 col-6">
+            <figure>
+                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
+                <figcaption>Старі фотографії</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}

@@ -24,6 +24,20 @@ namespace DNL.Controllers
             var news = _newsService.GetAll();
             return View(news);
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult Statut()
+        {
+            return View();
+        }
     }
 }
 

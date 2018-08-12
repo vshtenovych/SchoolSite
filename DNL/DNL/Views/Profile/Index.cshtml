@@ -1,11 +1,14 @@
-﻿@*@model Dictionary<string, object>
-<div class="bg-primary m-1 p-1 text-white"><h4>User Details</h4></div>
-<table class="table table-sm table-bordered m-1 p-1">
-    @foreach (var kvp in Model)
-    {
-        <tr><th>@kvp.Key</th><td>@kvp.Value</td></tr>
-    }
-</table>*@
+﻿<div id="content">
+    <main id="main" class="panel">
+        <i class="fas fa-bars js-slideout-toggle"></i>
+        <figure>
+            <img class="avatar" src="https://www.weblancer.net/img/userpic_male.png" width=150>
+            <figcaption>Толстый кот</figcaption>
+        </figure>
+        <p></p>
+    </main>
+</div>
+
 Ви зараєструвалися
 @if (User?.Identity?.IsAuthenticated ?? false)
 {

@@ -20,6 +20,11 @@ namespace DNL.Controllers
             return View(_newsService.GetAll());
         }
 
+        public IActionResult AllNews()
+        {
+            return View();
+        }
+
         [HttpGet]
         public ViewResult Create() => View();
         [HttpPost]

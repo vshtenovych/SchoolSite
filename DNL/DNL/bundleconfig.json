@@ -7,8 +7,18 @@
     "outputFileName": "wwwroot/css/bundles/layout.min.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "node_modules/bootstrap/dist/css/bootstrap.min.css",
-      "wwwroot/css/layout.css"
+      "wwwroot/css/layout.css",
+      "wwwroot/lib/bootstrap/css/bootstrap.min.css"
+    ]
+  },
+  // home
+  {
+    "outputFileName": "wwwroot/css/bundles/home.min.css",
+    // An array of relative input file paths. Globbing patterns supported
+    "inputFiles": [
+      "wwwroot/css/home.index.css",
+      "wwwroot/css/home.about.css",
+      "wwwroot/css/home.contact.css"
     ]
   },
   // Account
@@ -16,17 +26,52 @@
     "outputFileName": "wwwroot/css/bundles/account.min.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/Account.css"
+      "wwwroot/css/login.css"
     ]
   },
-  
+  // News
+  {
+    "outputFileName": "wwwroot/css/bundles/news.min.css",
+    // An array of relative input file paths. Globbing patterns supported
+    "inputFiles": [
+      "wwwroot/css/news.allnews.css"
+    ]
+  },
+  // PhotoGallery
+  {
+    "outputFileName": "wwwroot/css/bundles/gallery.min.css",
+    // An array of relative input file paths. Globbing patterns supported
+    "inputFiles": [
+      "wwwroot/css/gallery.albums.css"
+    ]
+  },
   // JS Files
-  // layout
+  // Layout
   {
     "outputFileName": "wwwroot/js/bundles/layout.min.js",
     "inputFiles": [
-      "node_modules/jquery/dist/jquery.js",
+      "wwwroot/lib/jquery.js",
+      "wwwroot/lib/bootstrap/js/bootstrap.min.js",
       "wwwroot/js/layout.js"
+    ]
+  },
+  //Home
+  {
+    "outputFileName": "wwwroot/js/bundles/home.min.js",
+    "inputFiles": [
+      "wwwroot/js/home.index.js"
+    ]
+  },
+  //News
+  {
+    "outputFileName": "wwwroot/js/bundles/news.min.js",
+    "inputFiles": [
+    ]
+  },
+  //Gallery
+  {
+    "outputFileName": "wwwroot/js/bundles/gallery.min.js",
+    "inputFiles": [
     ]
   }
 ]

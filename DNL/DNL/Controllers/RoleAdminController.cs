@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using BLL.ViewModels;
-using DNL.Helpers;
+using DNL.Infrastructure;
 
 namespace DNL.Controllers
 {

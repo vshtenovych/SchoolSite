@@ -24,9 +24,7 @@
     <header>
         <nav class="navbar sticky-top navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="~/images/logo.png" alt="Logotype">
-                </a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" height=35></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,39 +33,31 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Інформація</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                <a class="dropdown-item" href="">Статут наукового ліцею</a>
-                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Statut">Статут наукового ліцею</a>
                                 <a class="dropdown-item" href="#">Ліцензія</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Річний план</a>
-                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Вакансії</a>
                                 <a class="dropdown-item" href="#">Правила вступу</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Управління</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                <a class="dropdown-item" href="">Адміністрація закладу</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Річний план роботи</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Педадогічні ради</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Наради при директорі</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Накази</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Фінансова звітність</a>
+                                <a class="dropdown-item" href="administration.html">Адміністрація закладу</a>
+                                <a class="dropdown-item" href="#">Річний план роботи</a>
+                                <a class="dropdown-item" href="#">Педагогічні ради</a>
+                                <a class="dropdown-item" href="#">Наради при директорі</a>
+                                <a class="dropdown-item" href="#">Накази</a>
+                                <a class="dropdown-item" href="#">Фінансова звітність</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Новини</a>
+                            <a class="nav-link" asp-controller="News" asp-action="AllNews">Новини</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Контакти</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Contact">Контакти</a>
                         </li>
                     </ul>
-                    <a class="btn" id="login-button" asp-controller="Account" asp-action="Login" role="button">Увійти</a>
+                    <a class="btn" asp-controller="Account" asp-action="Login" id="login-button" role="button">Увійти</a>
                 </div>
             </div>
         </nav>
@@ -77,35 +67,31 @@
         @RenderBody()
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <ul class="footer-nav_menu">
                         <li id="title">Детальніше про ліцей</li>
-                        <li><a href="#">Долинський науковий ліцей №1</a></li>
-                        <li><a href="#">Контакти</a></li>
+                        <li><a asp-controller="Home" asp-action="About">Долинський науковий ліцей №1</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Контакти</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <ul class="footer-nav_menu">
                         <li id="title">Посилання</li>
-                        <li><a href="#">Про сайт</a></li>
-                        <li><a href="#">Новини</a></li>
-                        <li><a href="#">Оголошення</a></li>
-                        <li><a href="#">Блоги вчителів</a></li>
-                        <li><a href="#">Фотогалерея</a></li>
-                        <li><a href="#">Мапа сайту</a></li>
-                        <li><a href="#">Форум</a></li>
+                        <li><a asp-controller="News" asp-action="AllNews">Новини</a></li>
+                        <li><a asp-controller="PhotoGallery" asp-action="AllAlbums">Фотогалерея</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <ul class="footer-nav_menu">
                         <li id="title">Наш ліцей</li>
-                        <li><a href="#">Інформація</a></li>
-                        <li><a href="#">Управління</a></li>
-                        <li><a href="#">Новини</a></li>
-                        <li><a href="#">Контакти</a></li>
+                        <li><a href="timetable.html">Розклад</a></li>
+                        <li><a href="mr.html">Методична робота</a></li>
+                        <li><a href="vr.html">Виховна робота</a></li>
+                        <li><a href="achievements.html">Наші досягнення</a></li>
                     </ul>
                 </div>
             </div>
@@ -117,11 +103,12 @@
     <section id="follow-us-on">
         <div class="row justify-content-center">
             <div class="follow-text">Слідкуйте за нами в соціальних мережах</div>
-            <a href="https://facebook.com"><img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACwElEQVRIS7VWPUwTYRh+3u8KivgzEFCJCVqMQyFOODgwKIOJSEtU8CpEE4OaOCgFIQg6GDEKwVoGE01cjGKv+BMtxkEJi4POKhpjDOJvRMCYCNba+15zlVaB9q7FeMMN9z4/7999dwSTq7JJK2QdKhgbWMoiKUTObziNKuBnEjwARfH3dVUPJZOhRIFyT4/dBqWTIbcCIiHmD08yIK4L5uZbPvfrmXqzyK4GbZeuy/NCiCyz6mbH9EmQbX/Qu+PK37FpBi6P1sLAqfSEp6OZuanP5+6KPY0bGJkz49K/iMe5jNqgT+2JTsu4GT0nSU+t2rIoOxPFhXmYl6EgFNbx6Mm7xPlITERsetHdMzXDUQOnJ3AN4O1m2a9YuhgdB8uwMCszChv7+h17jgeTUpgR6POpKhmrKCPypdW2HKgqwab1hVHBkfEJjHyZRNu5AZOcJAsmO7katDZmtFv1/mhdKdY58hH6EYHaegPMVoxo/4+Qy6P1M1BmBi9enYfd5WuxpiAHoXAEJy4+gK5LPB8aNXdhuk/OQ1c/QohlZsjA6W2Yn2mbBvk0PoF97XfMDaR8T1s8WlgAGekavBgeQ3N3v6mBlDKckoGhcqyuFCWOfEyGfsLdetN6AACmDAIfBHi5FWMuBjBalMqQ51oBAfeowuNvJdDJ/1EBE7dQxeHeVaRHXlm9aOm2SEpIadPtU0eF1gugyqyKdA1A7A963TujBpX1/pWS5CCgLEhm4rDnImdJFiK6xMPHSQ65KbKE/KYQOW573W/jx7WzIVAL5stWs0gx7g6eVbX4cR0jOT1aE4DOFEUSwwiNQa/qjQVnfTKd9VoNGBcgkJ2OkdEWAbE3lnlSAyOwubGnQNGVDiJZbbVdxrYIhQOsKy193dVvZiZl+sdgDJ+JVGbaCNYdEsg1BATwmYQYlMQDOknN+HIlq/YXcCcscVsrCO8AAAAASUVORK5CYII=" /></a>
-            <a href="https://instagram.com"><img class="icon" src="data:image/png;base64,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" /></a>
-            <a href="https://youtube.com"><img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABy0lEQVRIS72Vz04TURTGv3N6aeuf1IUxGGPCgoWJk9Iimj4FvgZGEzc+A6zcFHwM06KPAVJZ2G4aUowLjUkDlcZCnfmOuYNsjHbq2GG295zvd+537uQTZPxJxvq4HEB3efmWI18Y8FDNblKkpMBVkEUCeQXmqOoU5wMRMCVDAj8UGBMYQXWkZt8o0s8Bu7lC4eXdnZ2+dGu1kjs7a4nZ4iztsijqXjN7IB+Xlp6bSH2W4hdaZvZUepXKWwFWswAAaMhBudzOqd6fBMgHAcbtdpoZ3sthpfIFwPyk7oVWC8PtbRzV6+BgMDVIgE8ecAqgMBGwvx8fe/HjrS2cNBoAmQwiBx5gSZULvwAXdd6u/sbGNLaNUwHOr8NE20iG/wdoNnG0ufnXvaQGxBatr2Pc6SS5G1s0AlCcdsl+4mGz+U9L/gzgduIzTbDjT/3xM+2Vyx9ENcjiR4uAlvSq1Tdi9jjJzFTnIq/lsFp9BrNXqQQSmkRkTb4GwfXvzr0DcG+WkIjsXMnnH8UBcrCycsOF4RMja1C9A7MSfOCIFEEWqDoXhw7gfL2SEYHQhw1UT0H6wBnC7AQifQF2Q+fqi3t7g8uJzFla87tW5jf4CRrC6Fq1OyMYAAAAAElFTkSuQmCC" /></a>
+            <a href="https://www.facebook.com/groups/1724650547661263/"><img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACwElEQVRIS7VWPUwTYRh+3u8KivgzEFCJCVqMQyFOODgwKIOJSEtU8CpEE4OaOCgFIQg6GDEKwVoGE01cjGKv+BMtxkEJi4POKhpjDOJvRMCYCNba+15zlVaB9q7FeMMN9z4/7999dwSTq7JJK2QdKhgbWMoiKUTObziNKuBnEjwARfH3dVUPJZOhRIFyT4/dBqWTIbcCIiHmD08yIK4L5uZbPvfrmXqzyK4GbZeuy/NCiCyz6mbH9EmQbX/Qu+PK37FpBi6P1sLAqfSEp6OZuanP5+6KPY0bGJkz49K/iMe5jNqgT+2JTsu4GT0nSU+t2rIoOxPFhXmYl6EgFNbx6Mm7xPlITERsetHdMzXDUQOnJ3AN4O1m2a9YuhgdB8uwMCszChv7+h17jgeTUpgR6POpKhmrKCPypdW2HKgqwab1hVHBkfEJjHyZRNu5AZOcJAsmO7katDZmtFv1/mhdKdY58hH6EYHaegPMVoxo/4+Qy6P1M1BmBi9enYfd5WuxpiAHoXAEJy4+gK5LPB8aNXdhuk/OQ1c/QohlZsjA6W2Yn2mbBvk0PoF97XfMDaR8T1s8WlgAGekavBgeQ3N3v6mBlDKckoGhcqyuFCWOfEyGfsLdetN6AACmDAIfBHi5FWMuBjBalMqQ51oBAfeowuNvJdDJ/1EBE7dQxeHeVaRHXlm9aOm2SEpIadPtU0eF1gugyqyKdA1A7A963TujBpX1/pWS5CCgLEhm4rDnImdJFiK6xMPHSQ65KbKE/KYQOW573W/jx7WzIVAL5stWs0gx7g6eVbX4cR0jOT1aE4DOFEUSwwiNQa/qjQVnfTKd9VoNGBcgkJ2OkdEWAbE3lnlSAyOwubGnQNGVDiJZbbVdxrYIhQOsKy193dVvZiZl+sdgDJ+JVGbaCNYdEsg1BATwmYQYlMQDOknN+HIlq/YXcCcscVsrCO8AAAAASUVORK5CYII=" /></a>
+            <a href="https://www.instagram.com/_.dnl1._"><img class="icon" src="data:image/png;base64,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" /></a>
+            <a href="https://www.youtube.com/channel/UCigQW6Rz2vH62G3yTZ-OEkw"><img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABy0lEQVRIS72Vz04TURTGv3N6aeuf1IUxGGPCgoWJk9Iimj4FvgZGEzc+A6zcFHwM06KPAVJZ2G4aUowLjUkDlcZCnfmOuYNsjHbq2GG295zvd+537uQTZPxJxvq4HEB3efmWI18Y8FDNblKkpMBVkEUCeQXmqOoU5wMRMCVDAj8UGBMYQXWkZt8o0s8Bu7lC4eXdnZ2+dGu1kjs7a4nZ4iztsijqXjN7IB+Xlp6bSH2W4hdaZvZUepXKWwFWswAAaMhBudzOqd6fBMgHAcbtdpoZ3sthpfIFwPyk7oVWC8PtbRzV6+BgMDVIgE8ecAqgMBGwvx8fe/HjrS2cNBoAmQwiBx5gSZULvwAXdd6u/sbGNLaNUwHOr8NE20iG/wdoNnG0ufnXvaQGxBatr2Pc6SS5G1s0AlCcdsl+4mGz+U9L/gzgduIzTbDjT/3xM+2Vyx9ENcjiR4uAlvSq1Tdi9jjJzFTnIq/lsFp9BrNXqQQSmkRkTb4GwfXvzr0DcG+WkIjsXMnnH8UBcrCycsOF4RMja1C9A7MSfOCIFEEWqDoXhw7gfL2SEYHQhw1UT0H6wBnC7AQifQF2Q+fqi3t7g8uJzFla87tW5jf4CRrC6Fq1OyMYAAAAAElFTkSuQmCC" /></a>
         </div>
     </section>
+
 
 
 

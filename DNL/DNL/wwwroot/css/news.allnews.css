@@ -1,0 +1,30 @@
+.news a {
+  color: #212529;
+}
+.news a:hover {
+  text-decoration: none;
+}
+.news p {
+  font-size: 17px;
+}
+.news .news-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+.news .news-date {
+  font-size: 13px;
+}
+.news img {
+  width: 95%;
+}
+.page-link {
+  color: #48607a;
+}
+.pagination {
+  margin-top: 0px;
+}
+.col-md-4,
+.col-sm-6,
+.col-12 {
+  margin-bottom: 50px;
+}

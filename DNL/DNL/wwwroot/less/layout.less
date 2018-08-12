@@ -1,2 +1,165 @@
 ﻿@import "Variables.less";
 
+@color_1: white;
+@color_2: #cccece;
+@background_color_1: white;
+@background_color_2: #e36252;
+@background_color_3: #bf4839;
+
+/*NavBar*/
+/*Footer*/
+/*Follow us on section*/
+.row {
+    margin-right: 0;
+}
+
+.dropdown-item {
+    height: 40px;
+    padding: .5rem 1.5rem;
+}
+
+.heading {
+    display: table;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    h2 {
+        opacity: 1;
+        font-weight: bold;
+        font-size: 48px;
+        text-transform: uppercase;
+        border-bottom: solid 6px red;
+        padding-bottom: 7px;
+    }
+}
+
+@media screen and (max-width: 795px) {
+    .adaptive-heading {
+        h2 {
+            font-weight: 650;
+            font-size: 36px;
+            border-bottom: solid 3px red;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .adaptive-heading {
+        h2 {
+            font-weight: 650;
+            font-size: 30px;
+            border-bottom: solid 3px red;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .adaptive-heading {
+        h2 {
+            font-weight: 600;
+            font-size: 22px;
+            border-bottom: solid 2px red;
+        }
+    }
+}
+
+.navbar {
+    background-color: @background_color_1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.nav-item {
+    padding-right: 50px;
+}
+
+#login-button {
+    color: @color_1;
+    background-color: @background_color_2;
+    padding: 3px 10px;
+}
+
+#login-button-button {
+    &:hover {
+        background-color: @background_color_3;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .navbar {
+        .dropdown-menu {
+            margin-top: 10.5px;
+        }
+
+        .dropdown {
+            &:hover {
+                > .dropdown-menu {
+                    display: block;
+                }
+            }
+
+            > .dropdown-toggle {
+                &:active {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 40px;
+    padding: 30px;
+    background: #2e3e4f;
+
+    row {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.footer-nav_menu {
+    list-style: none;
+
+    a {
+        text-decoration: none;
+        color: @color_2;
+
+        &:hover {
+            color: @color_1;
+        }
+    }
+
+    #title {
+        color: @color_2;
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+}
+
+#follow-us-on {
+    min-height: 55px;
+    background: #1e2d3d;
+
+    .icon {
+        padding: 16px 0 16px 16px;
+    }
+}
+
+.follow-text {
+    font-size: 17px;
+    color: @color_2;
+    float: left;
+    padding-top: 15px;
+}
+
+@media screen and (max-width: 480px) {
+    .follow-text {
+        display: none;
+    }
+}
