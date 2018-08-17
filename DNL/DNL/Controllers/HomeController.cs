@@ -38,6 +38,50 @@ namespace DNL.Controllers
         {
             return View();
         }
+        public IActionResult License()
+        {
+            return View();
+        }
+        public IActionResult Vacancies()
+        {
+            return View();
+        }
+        public IActionResult EntryRules()
+        {
+            return View();
+        }
+        public IActionResult MethodicalWork()
+        {
+            return View();
+        }
+        public IActionResult EducationalActivities()
+        {
+            return View();
+        }
+        public IActionResult Achievements()
+        {
+            return View();
+        }
+        public IActionResult WorkPlan()
+        {
+            return View();
+        }
+        public IActionResult DirectorMeeting()
+        {
+            return View();
+        }
+        public IActionResult Orders()
+        {
+            return View();
+        } 
+        public IActionResult FinancialStatements()
+        {
+            return View();
+        }
+        public IActionResult PedagogicalMeetings()
+        {
+            return View();
+        }
     }
 }
 

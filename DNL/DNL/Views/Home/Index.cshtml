@@ -30,12 +30,12 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="~/images/slider/school.jpg" alt="Second slide">
+            <img class="d-block w-100" src="~/images/slider/teachers.jpg" alt="Second slide">
             <div class="header-text row justify-content-center">
                 <div class="col-md-9">
                     <center>
                         <h1>Долинський науковий ліцей #1</h1>
-                        <h3>Наш ДЕВІЗ БИТИ В НІС КРОВ ТЕЧЕ БИТИ ЩЕ, А ЯК ДУЖИ СИЛЬНА КРОВОТЕЧА БИТИ ПАЛКОЮ ПО ПЛЕЧАХ!!!!!!!!!!</h3>
+                        <h3>Бачити в кожній дитині особистість, творчу, обдаровану, цікаву – першорядне завдання Долинського наукового ліцею №1</h3>
                         <a class="btn" asp-action="About" id="about-us-button" role="button">Про нас</a>
                     </center>
                 </div>
@@ -59,7 +59,7 @@
         <div class="row justify-content-center">
             <div class="col-md-3 col-sm-3 col-6">
                 <center>
-                    <a href="timetable.html">
+                    <a asp-controller="Timetable" asp-action="Index">
                         <img class="implnk-icon" src="~/images/menu/timetable.png">
                         <div class="important-links_title">Розклад</div>
                     </a>
@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-3 col-sm-3 col-6">
                 <center>
-                    <a href="mr.html">
+                    <a asp-controller="Home" asp-action="MethodicalWork">
                         <img class="implnk-icon" src="~/images/menu/methodical_work.png">
                         <div class="important-links_title">Методична робота</div>
                     </a>
@@ -75,7 +75,7 @@
             </div>
             <div class="col-md-3 col-sm-3 col-6">
                 <center>
-                    <a href="vr.html">
+                    <a asp-controller="Home" asp-action="EducationalActivities">
                         <img class="implnk-icon" src="~/images/menu/educational_activities.png">
                         <div class="important-links_title">Виховна робота</div>
                     </a>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-3 col-sm-3 col-6">
                 <center>
-                    <a href="achievements.html">
+                    <a asp-controller="Home" asp-action="Achievements">
                         <img class="implnk-icon" src="~/images/menu/our_achievements.png">
                         <div class="important-links_title">Наші досягнення</div>
                     </a>

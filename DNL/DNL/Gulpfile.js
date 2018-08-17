@@ -11,7 +11,8 @@ var gulp = require('gulp'),
 var paths = {
     css: "./wwwroot/css",
     less: "./wwwroot/less",
-    lib: "./wwwroot/lib"
+    lib: "./wwwroot/lib",
+    fonts: "./wwwroot/fonts"
 };
 
 var libs = [
@@ -33,6 +34,11 @@ gulp.task("move-libs-to-wwwroot", function () {
     return gulp
         .src(libs)
         .pipe(gulp.dest(paths.lib));
+});
+gulp.task("move-font-awesome-fonts-to-wwwroot", function () {
+    return gulp
+        .src("node_modules/font-awesome/fonts/*")
+        .pipe(gulp.dest(paths.fonts));
 });
 
 // prepare LESS files
