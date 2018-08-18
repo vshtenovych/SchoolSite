@@ -8,7 +8,7 @@ namespace DAL.Interfaces
     public interface IUnitOfWork
     {
         IRepository<News> News { get; }
-
+        IRepository<Personal> Personals { get; }
 
         void Save();
 

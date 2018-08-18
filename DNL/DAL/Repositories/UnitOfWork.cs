@@ -12,7 +12,7 @@ namespace DAL.Repositories
         private readonly AppIdentityDbContext _context;
 
         private IRepository<News> _newsRepository;
-
+        private IRepository<Personal> _personalRepository;
 
 
         public UnitOfWork(AppIdentityDbContext context)
@@ -21,6 +21,7 @@ namespace DAL.Repositories
         }
 
         public IRepository<News> News => _newsRepository ?? (_newsRepository = new Repository<News>(_context.News));
+        public IRepository<Personal> Personals => _personalRepository ?? (_personalRepository = new Repository<Personal>(_context.Personals));
 
         public void Save()
         {

@@ -9,3 +9,22 @@ if not exists (select * from sysobjects where name='News' and xtype='U')
 	Photo nvarchar(MAX) NOT NULL
 );
 go
+
+
+
+CREATE TABLE Personals
+(
+Id INT PRIMARY KEY IDENTITY(1,1),
+FirstName VARCHAR(255),
+LastName VARCHAR(255),
+UserId nvarchar(450) UNIQUE FOREIGN KEY REFERENCES AspNetUsers(Id)
+);
+
+
+CREATE TABLE Pupils
+(
+Id INT PRIMARY KEY IDENTITY(1,1),
+FirstName VARCHAR(255),
+LastName VARCHAR(255),
+UserId nvarchar(450) UNIQUE FOREIGN KEY REFERENCES AspNetUsers(Id)
+);

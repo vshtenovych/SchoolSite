@@ -17,21 +17,12 @@ namespace BLL.AutoMapper
         {
             Mapper.Initialize(config => {
 
-                //config.CreateMap<CompanyViewModel, Company>()
-                //.ForMember(company => company.Name, conf => conf.MapFrom(companyViewModel => companyViewModel.CompanyName))
-                //.ForMember(company => company.Photo, conf => conf.MapFrom(companyViewModel => companyViewModel.CompanyLogoSource))
-                //.ForMember(company => company.Intro, conf => conf.MapFrom(companyViewModel => companyViewModel.WhoWeAreText))
-                //.ForMember(company => company.Area, conf => conf.MapFrom(companyViewModel => companyViewModel.CompanyArea));
-                //config.CreateMap<Company, CompanyViewModel>()
-                //.ForMember(companyViewModel => companyViewModel.CompanyName, conf => conf.MapFrom(company => company.Name))
-                //.ForMember(companyViewModel => companyViewModel.CompanyArea, conf => conf.MapFrom(company => company.Area))
-                //.ForMember(companyViewModel => companyViewModel.CompanyLogoSource, conf => conf.MapFrom(company => company.Photo))
-                //.ForMember(companyViewModel => companyViewModel.WhoWeAreText, conf => conf.MapFrom(company => company.Intro))
-                //.ForMember(companyViewModel => companyViewModel.Vacancies, conf => conf.MapFrom(company => company.Jobs));
-
                 config.CreateMap<NewsViewModel, News>();
                 config.CreateMap<News, NewsViewModel>();
-            
+
+
+                config.CreateMap<PersonalViewModel, Personal>();
+                config.CreateMap<Personal, PersonalViewModel>();
             });
         }
     }

@@ -9,5 +9,6 @@ namespace EF.Entities
     {
         // no additional members are required
         // for basic Identity installation
+        public Personal Personal { get; set; }
     }
 }

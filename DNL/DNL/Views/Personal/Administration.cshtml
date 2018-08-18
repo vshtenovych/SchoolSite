@@ -1,4 +1,15 @@
-﻿
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/personal.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/personal.administration.css" />
+    </environment>
+}
+@model IEnumerable<PersonalViewModel>
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="heading adaptive-heading">
@@ -9,45 +20,21 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-4 col-6">
-            <center>
-                <img src="http://placehold.it/275x180?text=1" class="teacher-photo">
-                <div class="name">Ім'я Прізвище</div>
-                <div class="teacher-info">Директор ліцею</div>
-                <div class="teacher-info">Вчитель математики</div>
-                <div class="teacher-info">Якась категорія</div>
+        @{
+            foreach (var item in Model)
+            {
+                <div class="col-sm-4 col-6">
+                    <center>
+                        <img src="http://placehold.it/275x180?text=1" class="teacher-photo">
+                        <div class="name">@item.FirstName @item.LastName</div>
+                        <div class="teacher-info">Директор ліцею</div>
+                        <div class="teacher-info">Вчитель математики</div>
+                        <div class="teacher-info">Якась категорія</div>
+                    </center>
+                </div>
+            }
+        }
 
-            </center>
-        </div>
-        <div class="col-sm-4 col-6">
-            <center>
-                <img src="http://placehold.it/275x180?text=2" class="teacher-photo">
-                <div class="name">Ім'я Прізвище</div>
-                <div class="teacher-info">Заступник директора ліцею</div>
-                <div class="teacher-info">Вчитель математики</div>
-                <div class="teacher-info">Якась категорія</div>
-
-            </center>
-        </div>
-        <div class="col-sm-4 col-6">
-            <center>
-                <img src="http://placehold.it/275x180?text=3" class="teacher-photo">
-                <div class="name">Ім'я Прізвище</div>
-                <div class="teacher-info">Заступник директора ліцею</div>
-                <div class="teacher-info">Вчитель математики</div>
-                <div class="teacher-info">Якась категорія</div>
-
-            </center>
-        </div>
-        <div class="col-sm-4 col-6">
-            <center>
-                <img src="http://placehold.it/275x180?text=3" class="teacher-photo">
-                <div class="name">Ім'я Прізвище</div>
-                <div class="teacher-info">Заступник директора ліцею</div>
-                <div class="teacher-info">Вчитель математики</div>
-                <div class="teacher-info">Якась категорія</div>
-            </center>
-        </div>
     </div>
 </div>
 

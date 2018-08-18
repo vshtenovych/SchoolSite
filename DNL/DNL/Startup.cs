@@ -31,6 +31,7 @@ namespace DNL
         {
             // Add application services.
             services.AddTransient<INewsService, NewsService>();
+            services.AddTransient<IPersonalService, PersonalService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 

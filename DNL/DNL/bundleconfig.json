@@ -22,6 +22,14 @@
       "wwwroot/css/treeview.css"
     ]
   },
+  // Personal
+  {
+    "outputFileName": "wwwroot/css/bundles/personal.min.css",
+    // An array of relative input file paths. Globbing patterns supported
+    "inputFiles": [
+      "wwwroot/css/personal.administration.css"
+    ]
+  },
   // Account
   {
     "outputFileName": "wwwroot/css/bundles/account.min.css",

@@ -11,7 +11,7 @@ footer {
   display: inline-block;
   margin-top: 20px;
   height: 0px;
-  background: url('../img/monitor.png') no-repeat;
+  background: url('../images/monitor.png') no-repeat;
   position: relative;
 }
 .foo .bar {

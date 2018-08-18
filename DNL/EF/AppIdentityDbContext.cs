@@ -12,9 +12,20 @@ namespace EF
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
         public DbSet<News> News { get; set; }
+        public DbSet<Personal> Personals { get; set; }
 
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options)
         : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<AppUser>()
+                .HasOne(a => a.Personal)
+                .WithOne(b => b.AppUser)
+                .HasForeignKey<Personal>(b => b.UserId);
+        }
 
         public static async Task CreateAdminAccount(IServiceProvider serviceProvider, IConfiguration configuration)
         {
