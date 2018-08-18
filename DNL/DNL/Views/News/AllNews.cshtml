@@ -7,6 +7,7 @@
         <link type="text/css" rel="stylesheet" href="~/css/news.allnews.css" />
     </environment>
 }
+@model IEnumerable<NewsViewModel>
 
 
 <div class="row">
@@ -19,55 +20,20 @@
 
 <div class="container">
     <div class="row news">
-        <div class="col-md-4 col-sm-6 col-12">
-            <center>
-                <a href="news_1.html"><img src="http://placehold.it/340x180?text=1"></a>
-                <div class="news-date">10.10.10</div>
-                <a href="news_1.html"><div class="news-title">News title</div></a>
-                <div>Here must be more information. Lorem ipsum dolor sit aler</div>
-            </center>
-        </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <center>
-                <img src="http://placehold.it/340x180?text=2">
-                <div class="news-date">10.10.10</div>
-                <div class="news-title">News title</div>
-                <div>Here must be more information. Lorem ipsum dolor sit aler</div>
-            </center>
-        </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <center>
-                <img src="http://placehold.it/340x180?text=3">
-                <div class="news-date">10.10.10</div>
-                <div class="news-title">News title</div>
-                <div>Here must be more information. Lorem ipsum dolor sit aler</div>
-            </center>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-12">
-            <center>
-                <img src="http://placehold.it/340x180?text=4">
-                <div class="news-date">10.10.10</div>
-                <div class="news-title">News title</div>
-                <div>Here must be more information. Lorem ipsum dolor sit aler</div>
-            </center>
-        </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <center>
-                <img src="http://placehold.it/340x180?text=5">
-                <div class="news-date">10.10.10</div>
-                <div class="news-title">News title</div>
-                <div>Here must be more information. Lorem ipsum dolor sit aler</div>
-            </center>
-        </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <center>
-                <img src="http://placehold.it/340x180?text=6">
-                <div class="news-date">10.10.10</div>
-                <div class="news-title">News title</div>
-                <div>Here must be more information. Lorem ipsum dolor sit aler</div>
-            </center>
-        </div>
+        @{
+            foreach (var item in Model)
+            {
+                var newsPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+                <div class="col-md-4 col-sm-6 col-12">
+                    <center>
+                        <a asp-controller="News" asp-action="NewsDetails" asp-route-newsId="@item.Id"><img src="@newsPhoto"></a>
+                        <div class="news-date">@item.DateOfPost.ToString("MM.dd.yyyy")</div>
+                        <a href="news_1.html"><div class="news-title">@item.Title</div></a>
+                        <div>@item.ShortDescription</div>
+                    </center>
+                </div>
+            }
+        }
     </div>
 </div>
 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLL.Interfaces;
 using BLL.ViewModels;
+using DNL.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DNL.Controllers
@@ -15,6 +17,8 @@ namespace DNL.Controllers
         {
             _newsService = newsService;
         }
+        [ViewLayout("_ProfileLayout")]
+        [Authorize(Roles = "Admins")]
         public ViewResult Index()
         {
             return View(_newsService.GetAll());
@@ -22,9 +26,17 @@ namespace DNL.Controllers
 
         public IActionResult AllNews()
         {
-            return View();
+            return View(_newsService.GetAll());
         }
 
+        public IActionResult NewsDetails(int newsId)
+        {
+            var result = _newsService.Get(newsId);
+            return View(result);
+        }
+
+        [ViewLayout("_ProfileLayout")]
+        [Authorize(Roles = "Admins")]
         [HttpGet]
         public ViewResult Create() => View();
         [HttpPost]
@@ -38,6 +50,8 @@ namespace DNL.Controllers
             return View(client);
         }
 
+        [ViewLayout("_ProfileLayout")]
+        [Authorize(Roles = "Admins")]
         public ViewResult Edit(int id)
         {
             return View(_newsService.Get(id));

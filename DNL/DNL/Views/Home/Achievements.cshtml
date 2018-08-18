@@ -1,7 +1,79 @@
-﻿
-@{
-    ViewData["Title"] = "Achievements";
+﻿@section CssFiles {
+<environment include="Staging, Production">
+    <link type="text/css" rel="stylesheet" href="~/css/bundles/home.min.css" />
+</environment>
+
+<environment include="Development">
+    <link type="text/css" rel="stylesheet" href="~/css/home.achievements.css" />
+</environment>
 }
 
-<h2>Achievements</h2>
+<div class="row">
+    <div class="col-md-12">
+        <div class="heading">
+            <h2>Досягнення</h2>
+        </div>
+    </div>
+</div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="title">Золоті медалісти</div>
+            <div class="row ">
+                <div class="col-auto"><button id="2018" type="button" class="btn gold-btn">2018</button></div>
+                <div class="col-auto"><button id="2017" type="button" class="btn gold-btn">2017</button></div>
+                <div class="col-auto"><button id="2016" type="button" class="btn gold-btn">2016</button></div>
+                <div class="col-auto"><button id="2015" type="button" class="btn gold-btn">2015</button></div>
+                <div class="col-auto"><button id="2014" type="button" class="btn gold-btn">2014</button></div>
+                <div class="col-auto"><button id="2013" type="button" class="btn gold-btn">2013</button></div>
+                <div class="col-auto"><button id="2012" type="button" class="btn gold-btn">2012</button></div>
+            </div>
+            <div id="golders"></div>
+        </div>
+        <div class="col-md-6">
+            <div class="title">Срібні медалісти</div>
+            <div class="row">
+                <div class="col-auto"><button id="2018" type="button" class="btn silver-btn">2018</button></div>
+                <div class="col-auto"><button id="2017" type="button" class="btn silver-btn">2017</button></div>
+                <div class="col-auto"><button id="2016" type="button" class="btn silver-btn">2016</button></div>
+                <div class="col-auto"><button id="2015" type="button" class="btn silver-btn">2015</button></div>
+                <div class="col-auto"><button id="2014" type="button" class="btn silver-btn">2014</button></div>
+                <div class="col-auto"><button id="2013" type="button" class="btn silver-btn">2013</button></div>
+                <div class="col-auto"><button id="2012" type="button" class="btn silver-btn">2012</button></div>
+            </div>
+            <div id="silvers"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="title" id="_wells">Відмінники навчання</div>
+    <div class="row">
+        <div class="col-auto"><button id="5" type="button" class="btn blue-btn">5 клас</button></div>
+        <div class="col-auto"><button id="6" type="button" class="btn blue-btn">6 клас</button></div>
+        <div class="col-auto"><button id="7" type="button" class="btn blue-btn">7 клас</button></div>
+        <div class="col-auto"><button id="8" type="button" class="btn blue-btn">8 клас</button></div>
+        <div class="col-auto"><button id="9" type="button" class="btn blue-btn">9 клас</button></div>
+        <div class="col-auto"><button id="10" type="button" class="btn blue-btn">10 клас</button></div>
+        <div class="col-auto"><button id="11" type="button" class="btn blue-btn">11 клас</button></div>
+    </div>
+    <div id="wells"></div>
+</div>
+
+<div class="container">
+    <div class="title" id="subjects">Досягнення з предметів</div>
+    <div>Переможці районних олімпіад</div>
+    <iframe src="https://drive.google.com/file/d/1Rc0LcPYZgM5CpfTfN1WcxPntYFn2GZyL/preview" width="100%" height="480"></iframe>
+</div>
+
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}

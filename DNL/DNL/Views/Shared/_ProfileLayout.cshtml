@@ -4,61 +4,79 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/layout.min.css" />
+        <link type="text/css" rel="stylesheet" href="~/lib/font-awesome.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="~/css/profile.layout.css" />
+        <link type="text/css" rel="stylesheet" href="~/lib/font-awesome.min.css" />
+    </environment>
+
+    <!-- add css files from partial views -->
+    @RenderSection("CssFiles", required: false)
 </head>
 <body>
-    <header>
-        PROFILE LAYOUT
-    </header>
     <section>
         <nav id="sidebar">
             <ul class="list-unstyled components">
                 <p class="sidebar-title">Управління кабінетом</p>
 
-                <li><a href="profile.html"><i class="fas fa-home"></i><span class="li-text"> Мій профіль</span></a></li>
+                <li><a asp-controller="Profile" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i><span class="li-text"> Мій профіль</span></a></li>
                 <li><a href="e-journal.html"><i class="fas fa-briefcase"></i><span class="li-text"> Журнал</span></a></li>
                 <li><a href="vns.html"><i class="fas fa-graduation-cap"></i><span class="li-text"> Віртуальне навчальне середовище</span></a></li>
-                <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i><span class="li-text"> Вийти</span></a></li>
+                <li><a asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i><span class="li-text"> Вийти</span></a></li>
 
                 <p class="sidebar-title">Адміністрування сайту</p>
-                <li><a href="news.html"><i class="fas fa-newspaper"></i><span class="li-text"> Новини</span></a></li>
-                <li><a href="#"><i class="fas fa-calendar-alt"></i><span class="li-text"> Розклад</span></a></li>
-                <li><a href="#"><i class="fas fa-images"></i><span class="li-text"> Фотогалерея</span></a></li>
+                <li><a asp-controller="News" asp-action="Index"><i class="fas fa-newspaper"></i><span class="li-text"> Новини</span></a></li>
+                <li><a asp-controller="Timetable" asp-action="Index"><i class="fas fa-calendar-alt"></i><span class="li-text"> Розклад</span></a></li>
+                <li><a asp-controller="PhotoGallery" asp-action="Index"><i class="fas fa-images"></i><span class="li-text"> Фотогалерея</span></a></li>
             </ul>
         </nav>
-
-
-
 
         <div class="wrapper">
             <nav id="sidebar-big">
                 <ul class="list-unstyled components">
                     <p class="sidebar-title">Управління кабінетом</p>
-                    <li><a href="profile.html"><i class="fas fa-home"></i><span class="li-text"> Мій профіль</span></a></li>
+                    <li><a asp-controller="Profile" asp-action="Index"><i class="fas fa-home"></i><span class="li-text"> Мій профіль</span></a></li>
                     <li><a href="e-journal.html"><i class="fas fa-briefcase"></i><span class="li-text"> Журнал</span></a></li>
                     <li><a href="vns.html"><i class="fas fa-graduation-cap"></i><span class="li-text"> Віртуальне навчальне середовище</span></a></li>
-                    <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i><span class="li-text"> Вийти</span></a></li>
+                    <li><a asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i><span class="li-text"> Вийти</span></a></li>
 
                     <p class="sidebar-title">Адміністрування сайту</p>
-                    <li><a href="news.html"><i class="fas fa-newspaper"></i><span class="li-text"> Новини</span></a></li>
-                    <li><a href="#"><i class="fas fa-calendar-alt"></i><span class="li-text"> Розклад</span></a></li>
-                    <li><a href="#"><i class="fas fa-images"></i><span class="li-text"> Фотогалерея</span></a></li>
+                    <li><a asp-controller="News" asp-action="Index"><i class="fas fa-newspaper"></i><span class="li-text"> Новини</span></a></li>
+                    <li><a asp-controller="Timetable" asp-action="Index"><i class="fas fa-calendar-alt"></i><span class="li-text"> Розклад</span></a></li>
+                    <li><a asp-controller="PhotoGallery" asp-action="Index"><i class="fas fa-images"></i><span class="li-text"> Фотогалерея</span></a></li>
                 </ul>
             </nav>
-            @*<div id="content">
+            <div id="content">
                 <main id="main" class="panel">
                     <i class="fas fa-bars js-slideout-toggle"></i>
-                    <figure>
-                        <img class="avatar" src="https://www.weblancer.net/img/userpic_male.png" width=150>
-                        <figcaption>Толстый кот</figcaption>
-                    </figure>
-                    <p></p>
+                    @RenderBody()
                 </main>
-            </div>*@
-
+            </div>
         </div>
     </section>
-    <div>
-        @RenderBody()
-    </div>
+    
+
+    <environment include="Staging, Production">
+        <script src="~/js/bundles/layout.min.js"></script>
+    </environment>
+
+    <environment include="Development">
+        <script src="~/lib/jquery.js"></script>
+        <script src="~/lib/jquery.validate.js"></script>
+        <script src="~/lib/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/tether.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/js/layout.js"></script>
+    </environment>
+
+    <!-- add js files from partial views -->
+    @RenderSection("JsFiles", required: false)
+
 </body>
 </html>

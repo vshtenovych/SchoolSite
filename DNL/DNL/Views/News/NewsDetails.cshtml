@@ -1,0 +1,45 @@
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/news.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/news.allnews.css" />
+    </environment>
+}
+
+@model NewsViewModel
+
+@{
+    var newsPhoto = string.Format("data:image/gif;base64,{0}", Model.Photo);
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="heading">
+            <h2>@Model.Title</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <p>@Model.LongDescription</p>
+    <center>
+        <a data-fancybox="gallery" href="@newsPhoto">
+            <img class="img-fluid" src="@newsPhoto">
+        </a>
+    </center>
+</div>
+
+
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+        <script src="~/js/home.index.js" type="text/javascript"></script>
+    </environment>
+
+    <environment include="Development">
+        <script src="~/js/news.js" type="text/javascript"></script>
+    </environment>
+}

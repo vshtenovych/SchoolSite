@@ -1,7 +1,19 @@
-﻿
-@{
-    ViewData["Title"] = "PedagogicalMeetings";
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/home.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/home.about.css" />
+    </environment>
 }
 
-<h2>PedagogicalMeetings</h2>
 
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}

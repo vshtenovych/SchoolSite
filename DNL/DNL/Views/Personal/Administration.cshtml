@@ -1,7 +1,11 @@
 ﻿
-@{
-    ViewData["Title"] = "Administration";
+
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
 }
-
-<h2>Administration</h2>
-
