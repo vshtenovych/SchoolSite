@@ -4,15 +4,52 @@
     </environment>
 
     <environment include="Development">
-        <link type="text/css" rel="stylesheet" href="~/css/home.about.css" />
+        <link type="text/css" rel="stylesheet" href="~/css/treeview.css" />
     </environment>
 }
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="heading adaptive-heading">
+            <h2>Виховна робота</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ul data-role="treeview">
+        <li data-caption="Національно-патріотичне виховання">
+            <ul>
+                <a href="#"><li data-caption="Заходи"></li></a>
+                <a href="#"><li data-caption="Презентація"></li></a>
+                <a href="#"><li data-caption="Фотогалерея"></li></a>
+            </ul>
+        </li>
+        <li data-caption="Гурткова робота">
+            <ul>
+                <a href="#"><li data-caption="Розклад роботи гуртків"></li></a>
+                <a href="#"><li data-caption="Досягнення"></li></a>
+                <a href="#"><li data-caption="Фотогалерея"></li></a>
+            </ul>
+        </li>
+        <li data-caption="Спортивні заходи">
+            <ul>
+                <a href="#"><li data-caption="Календарний план спортивно-масових заходів"></li></a>
+                <a href="#"><li data-caption="Фотогалерея"></li></a>
+            </ul>
+        </li>
+    </ul>
+</div>
+
 
 @section JsFiles {
 
     <environment include="Staging, Production">
+        <script src="~/js/bundles/home.min.js" type="text/javascript"></script>
     </environment>
 
     <environment include="Development">
+        <script src="~/lib/metro/js/metro.min.js" type="text/javascript"></script>
     </environment>
 }

@@ -18,7 +18,8 @@
     "inputFiles": [
       "wwwroot/css/home.index.css",
       "wwwroot/css/home.about.css",
-      "wwwroot/css/home.contact.css"
+      "wwwroot/css/home.contact.css",
+      "wwwroot/css/treeview.css"
     ]
   },
   // Account
@@ -34,7 +35,8 @@
     "outputFileName": "wwwroot/css/bundles/news.min.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/news.allnews.css"
+      "wwwroot/css/news.allnews.css",
+      "wwwroot/css/news.index.css"
     ]
   },
   // PhotoGallery
@@ -59,13 +61,15 @@
   {
     "outputFileName": "wwwroot/js/bundles/home.min.js",
     "inputFiles": [
-      "wwwroot/js/home.index.js"
+      "wwwroot/js/home.index.js",
+      "wwwroot/lib/metro/js/metro.min.js"
     ]
   },
   //News
   {
     "outputFileName": "wwwroot/js/bundles/news.min.js",
     "inputFiles": [
+      "wwwroot/js/news.js"
     ]
   },
   //Gallery

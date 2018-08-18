@@ -40,14 +40,15 @@ namespace DNL.Controllers
         [HttpGet]
         public ViewResult Create() => View();
         [HttpPost]
-        public IActionResult Create(NewsViewModel client)
+        public IActionResult Create(NewsViewModel model)
         {
+            model.DateOfPost = DateTime.Now;
             if (ModelState.IsValid)
             {
-                _newsService.Add(client);
+                _newsService.Add(model);
                 return RedirectToAction("Index");
             }
-            return View(client);
+            return View(model);
         }
 
         [ViewLayout("_ProfileLayout")]

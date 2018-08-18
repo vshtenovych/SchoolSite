@@ -14,7 +14,7 @@
 
 <div asp-validation-summary="All" class="text-danger"></div>
 
-<form asp-action="Create" method="post">
+@*<form asp-action="Create" method="post">
     <input hidden id="PictureSource" asp-for="Photo" />
     <div class="form-group">
         <label asp-for="Title"></label>
@@ -34,7 +34,6 @@
     </div>
     <div class="form-group">
         <p>Image</p>
-        <p></p>
         <div class="image-upload">
             <label for="FileInput">
                 <span readonly id="NameEventPhoto">Path of the photo</span>
@@ -45,8 +44,33 @@
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+</form>*@
 
+<div class="container">
+    <form asp-action="Create" method="post">
+        <input hidden id="PictureSource" asp-for="Photo" />
+        <div class="form-group">
+            <label asp-for="Title">Назва новини</label>
+            <input asp-for="Title" class="form-control" placeholder="Назва">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ShortDescription">Короткий опис новини</label>
+            <input asp-for="ShortDescription" class="form-control" placeholder="Короткий опис">
+        </div>
+        <div class="form-group">
+            <label asp-for="LongDescription">Довгий опис новини</label>
+            <textarea asp-for="LongDescription" class="form-control" placeholder="Довгий опис"></textarea>
+        </div>
+        <div class="custom-file">
+            <p>Фотографія( 17/9 e.g. 340x180)</p>
+            <label class="custom-file-label" for="FileInput">Вибрати файл</label>
+            <input type="file" class="custom-file-input" id="FileInput">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Зберегти</button>
+    </form>
+</div>
 
 @section JsFiles {
 

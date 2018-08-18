@@ -4,7 +4,8 @@
     </environment>
 
     <environment include="Development">
-        <link type="text/css" rel="stylesheet" href="~/css/home.achievements.css" />
+        <link type="text/css" rel="stylesheet" href="~/css/treeview.css" />
+
     </environment>
 }
 
@@ -18,7 +19,6 @@
 </div>
 
 <div class="container">
-
     <ul data-role="treeview">
         <li data-caption="Методичні об'єднання">
             <ul>
@@ -78,9 +78,11 @@
 @section JsFiles {
 
     <environment include="Staging, Production">
+        <script src="~/js/bundles/home.min.js" type="text/javascript"></script>
     </environment>
 
     <environment include="Development">
+        <script src="~/lib/metro/js/metro.min.js" type="text/javascript"></script>
     </environment>
 }
 
