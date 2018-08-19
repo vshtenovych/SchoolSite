@@ -1,8 +1,9 @@
 ﻿using BLL.AutoMapper;
 using BLL.Interfaces;
 using BLL.ViewModels;
+using Core.Entities;
 using DAL.Interfaces;
-using EF.Entities;
+
 using System;
 using System.Collections.Generic;
 using System.Text;

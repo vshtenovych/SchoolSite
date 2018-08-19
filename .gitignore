@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /DNL/DNL/Properties/PublishProfiles
+/DNL/Core/Migrations

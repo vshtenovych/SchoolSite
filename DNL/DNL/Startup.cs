@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLL.Interfaces;
 using BLL.Services;
+using Core;
 using DAL.Interfaces;
 using DAL.Repositories;
 using EF;
@@ -36,10 +37,24 @@ namespace DNL
 
 
             // connect to db
-            services.AddDbContext<AppIdentityDbContext>(options =>
+            //services.AddDbContext<AppIdentityDbContext>(options =>
+            //    options.UseSqlServer(Configuration["Data:ConnectionString"]));
+            services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration["Data:ConnectionString"]));
 
+
             //// set up IdentityRole 
+            //services.AddIdentity<AppUser, IdentityRole>(opts =>
+            //{
+            //    opts.Password.RequiredLength = 6;
+            //    opts.Password.RequireNonAlphanumeric = false;
+            //    opts.Password.RequireLowercase = false;
+            //    opts.Password.RequireUppercase = false;
+            //    opts.Password.RequireDigit = false;
+            //    opts.User.RequireUniqueEmail = true;
+            //}).AddEntityFrameworkStores<AppIdentityDbContext>()
+            //    .AddDefaultTokenProviders();
+
             services.AddIdentity<AppUser, IdentityRole>(opts =>
             {
                 opts.Password.RequiredLength = 6;
@@ -48,7 +63,7 @@ namespace DNL
                 opts.Password.RequireUppercase = false;
                 opts.Password.RequireDigit = false;
                 opts.User.RequireUniqueEmail = true;
-            }).AddEntityFrameworkStores<AppIdentityDbContext>()
+            }).AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
 
@@ -81,7 +96,9 @@ namespace DNL
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
+            //AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
+            //AppDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
+            //AppDbContext.CreateAppUserAccount(app.ApplicationServices, Configuration, "Data:AdminUser").Wait();
         }
     }
 }

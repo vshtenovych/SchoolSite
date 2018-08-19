@@ -7,7 +7,6 @@ namespace Core.Entities
 {
     public class AppUser : IdentityUser
     {
-        // no additional members are required
-        // for basic Identity installation
+        public Personal Personal { get; set; }
     }
 }
