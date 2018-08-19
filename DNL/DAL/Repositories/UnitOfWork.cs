@@ -1,7 +1,6 @@
 ﻿using Core;
 using Core.Entities;
 using DAL.Interfaces;
-using EF;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +9,6 @@ namespace DAL.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        //private readonly AppIdentityDbContext _context;
         private readonly AppDbContext _context;
 
 

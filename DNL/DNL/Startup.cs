@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 using BLL.Interfaces;
 using BLL.Services;
 using Core;
+using Core.Entities;
 using DAL.Interfaces;
 using DAL.Repositories;
-using EF;
-using EF.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -98,7 +97,7 @@ namespace DNL
 
             //AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
             //AppDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
-            //AppDbContext.CreateAppUserAccount(app.ApplicationServices, Configuration, "Data:AdminUser").Wait();
+            AppDbContext.CreateAppUserAccount(app.ApplicationServices, Configuration, "Data:AdminUser").Wait();
         }
     }
 }

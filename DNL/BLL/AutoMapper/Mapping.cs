@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BLL.ViewModels;
-using EF.Entities;
+using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNL", "DNL\DNL.csproj", "{616AAD9B-E514-4261-AAED-FB1170C1298A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF", "EF\EF.csproj", "{E2637FD5-C9F0-43AA-A368-AB419F9E683F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82DAB448-902D-493B-A062-89F9A097E15E}"
 	ProjectSection(SolutionItems) = preProject
 		db-create.sql = db-create.sql
@@ -17,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{6752FAE0-07E9-4805-BB57-CB9F29076040}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{D8911756-EC26-495E-ACE4-35A05A7B2B85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{D8911756-EC26-495E-ACE4-35A05A7B2B85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{616AAD9B-E514-4261-AAED-FB1170C1298A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{616AAD9B-E514-4261-AAED-FB1170C1298A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{616AAD9B-E514-4261-AAED-FB1170C1298A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2637FD5-C9F0-43AA-A368-AB419F9E683F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2637FD5-C9F0-43AA-A368-AB419F9E683F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2637FD5-C9F0-43AA-A368-AB419F9E683F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2637FD5-C9F0-43AA-A368-AB419F9E683F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32990EB0-ECE1-49B5-8C9A-9EF3A895D884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32990EB0-ECE1-49B5-8C9A-9EF3A895D884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32990EB0-ECE1-49B5-8C9A-9EF3A895D884}.Release|Any CPU.ActiveCfg = Release|Any CPU
