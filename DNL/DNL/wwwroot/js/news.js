@@ -6,9 +6,7 @@
             var reader = new FileReader();
 
             var filename = $('#FileInput').val();
-            $('#NameEventPhoto').text(filename);
-
-            var eventId = $('#EventId').text();
+            $('#NameNewsPhoto').text(filename);
 
             reader.onload = function (e) {
                 $('.name-event-photo').attr('src', e.target.result);

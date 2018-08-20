@@ -58,14 +58,14 @@ namespace DNL.Controllers
             return View(_newsService.Get(id));
         }
         [HttpPost]
-        public IActionResult Edit(NewsViewModel client)
+        public IActionResult Edit(NewsViewModel model)
         {
             if (ModelState.IsValid)
             {
-                _newsService.Update(client);
+                _newsService.Update(model);
                 return RedirectToAction("Index");
             }
-            return View(client);
+            return View(model);
         }
 
         [HttpPost]
