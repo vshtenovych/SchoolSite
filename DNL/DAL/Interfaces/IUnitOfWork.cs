@@ -9,6 +9,9 @@ namespace DAL.Interfaces
     {
         IRepository<News> News { get; }
         IRepository<Personal> Personals { get; }
+        IRepository<Album> Albums { get; }
+        IRepository<MethodicalAssociation> MethodicalAssociations { get; }
+        IRepository<Teacher> Teachers { get; }
 
         void Save();
 

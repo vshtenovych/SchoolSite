@@ -13,6 +13,10 @@ namespace Core
     {
         public DbSet<News> News { get; set; }
         public DbSet<Personal> Personals { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<AlbumPhoto> AlbumPhotos { get; set; }
+        public DbSet<MethodicalAssociation> MethodicalAssociations { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options) { }
@@ -25,6 +29,11 @@ namespace Core
                 .HasOne(a => a.Personal)
                 .WithOne(b => b.AppUser)
                 .HasForeignKey<Personal>(b => b.UserId);
+
+            modelBuilder.Entity<AppUser>()
+                .HasOne(a => a.Teacher)
+                .WithOne(b => b.AppUser)
+                .HasForeignKey<Teacher>(b => b.UserId);
         }
 
         public static async Task CreateAppUserAccount(IServiceProvider serviceProvider,

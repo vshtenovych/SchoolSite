@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82DAB448-902D-493B-A062-89F9A097E15E}"
 	ProjectSection(SolutionItems) = preProject
 		db-create.sql = db-create.sql
+		db-data.sql = db-data.sql
 		db-update.sql = db-update.sql
 	EndProjectSection
 EndProject

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Core.Entities
 {
-    public class Personal
+    public class MethodicalAssociation
     {
         [Key]
         public int Id { get; set; }
-       
-        public string UserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public string Name { get; set; }
+        public string Presentation { get; set; }
     }
 }

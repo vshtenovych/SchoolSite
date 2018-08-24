@@ -5,12 +5,11 @@ using System.Text;
 
 namespace Core.Entities
 {
-    public class Personal
+    public class Album
     {
         [Key]
         public int Id { get; set; }
-       
-        public string UserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public string Name { get; set; }
+        public string Cover { get; set; }
     }
 }

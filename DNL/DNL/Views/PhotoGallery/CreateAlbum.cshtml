@@ -1,0 +1,91 @@
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/news.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/gallery.edit.create.css" />
+    </environment>
+}
+
+
+@model AlbumViewModel
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div class="container">
+    <h2 class="title text-center title">Створити альбом</h2>
+    <form asp-action="CreateAlbum" method="post">
+        <input hidden id="PictureSource" asp-for="Cover" />
+        <div class="form-group">
+            <label asp-for="Name">Назва альбому</label>
+            <input asp-for="Name" class="form-control" placeholder="Назва">
+        </div>
+        <div class="custom-file">
+            <p>Обкладинка</p>
+            <label class="custom-file-label" id="NameAlbumPhoto" for="FileInput">Вибрати файл</label>
+            <input type="file" class="custom-file-input" id="FileInput">
+        </div>
+        
+        <div class="photos">
+            <p>Фотографії</p>
+            <input type="button" value="Добавити" />
+
+            <div class="photo-item" style="display: none">
+                <input />
+            </div>
+        </div>
+        @*<div class="job-item certificates">
+            <h6 class="title">Certificates</h6>
+            <input type="button" value="Add" class="add-item" />
+
+
+            <div class="certificate-item" style="display: none">
+                <select class="content">
+                    @foreach (CertificateViewModel certificateViewModel in ViewBag.Certificates)
+                    {
+                        <option value="@certificateViewModel.Id">@certificateViewModel.Name</option>
+                    }
+                </select>
+                <div class="close-select text-center">
+                    <input type="button" value="Delete" class="close-select-button" onclick="CloseCertificateSelectButtonClick(this)" />
+                </div>
+            </div>
+
+            @foreach (var certificate in Model.JobCertificates)
+            {
+                <div class="certificate-item">
+                    <select class="content" name="JobCertificates">
+                        @foreach (CertificateViewModel certificateViewModel in ViewBag.Certificates)
+                        {
+                            if (certificate == certificateViewModel.Name)
+                            {
+                                <option value="@certificateViewModel.Id" selected>@certificateViewModel.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@certificateViewModel.Id">@certificateViewModel.Name</option>
+                            }
+                        }
+                    </select>
+                    <div class="close-select text-center">
+                        <input type="button" value="Delete" class="close-select-button" onclick="CloseCertificateSelectButtonClick(this)" />
+                    </div>
+                </div>
+            }
+        </div>*@
+        <button class="btn btn-primary" type="submit">Зберегти</button>
+        <a class="btn btn-warning" asp-action="Index">Назад до списку</a>
+    </form>
+</div>
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+        <script src="~/js/bundles/news.min.js" type="text/javascript"></script>
+    </environment>
+
+    <environment include="Development">
+        <script src="~/js/album.js" type="text/javascript"></script>
+    </environment>
+}

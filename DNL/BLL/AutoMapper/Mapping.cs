@@ -23,6 +23,12 @@ namespace BLL.AutoMapper
 
                 config.CreateMap<PersonalViewModel, Personal>();
                 config.CreateMap<Personal, PersonalViewModel>();
+
+                config.CreateMap<AlbumViewModel, Album>();
+                config.CreateMap<Album, AlbumViewModel>();
+
+                config.CreateMap<TeacherViewModel, Teacher>();
+                config.CreateMap<Teacher, TeacherViewModel>();
             });
         }
     }

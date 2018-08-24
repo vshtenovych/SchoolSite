@@ -8,6 +8,7 @@
     </environment>
 }
 
+@model IEnumerable<AlbumViewModel>
 
 <div class="row">
     <div class="col-md-12">
@@ -19,30 +20,17 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-6">
-            <figure>
-                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
-                <figcaption>Старі фотографії</figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3  col-6">
-            <figure>
-                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
-                <figcaption>Старі фотографії</figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3 col-6">
-            <figure>
-                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
-                <figcaption>Старі фотографії</figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3 col-6">
-            <figure>
-                <p><a href="old_photos_album.html"><img src="img/old_photos/image5.jpg" width=100%></a></p>
-                <figcaption>Старі фотографії</figcaption>
-            </figure>
-        </div>
+        @foreach (var item in Model)
+        {
+            var albumPhoto = string.Format("data:image/gif;base64,{0}", item.Cover);
+            <div class="col-md-3 col-6">
+                <figure>
+                    <p><a href="old_photos_album.html"><img src="@albumPhoto" width=100%></a></p>
+                    <figcaption>@item.Name</figcaption>
+                </figure>
+            </div>
+        }
+
     </div>
 </div>
 

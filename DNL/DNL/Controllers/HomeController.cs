@@ -21,7 +21,7 @@ namespace DNL.Controllers
 
         public IActionResult Index()
         {
-            var news = _newsService.GetAll().Reverse();
+            var news = _newsService.GetAll().Reverse().Take(6);
 
             return View(news);
         }

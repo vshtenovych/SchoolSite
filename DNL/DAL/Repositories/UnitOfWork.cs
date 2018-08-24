@@ -14,6 +14,9 @@ namespace DAL.Repositories
 
         private IRepository<News> _newsRepository;
         private IRepository<Personal> _personalRepository;
+        private IRepository<Album> _albumRepository;
+        private IRepository<MethodicalAssociation> _associationRepository;
+        private IRepository<Teacher> _teacherRepository;
 
 
         public UnitOfWork(AppDbContext context)
@@ -23,6 +26,9 @@ namespace DAL.Repositories
 
         public IRepository<News> News => _newsRepository ?? (_newsRepository = new Repository<News>(_context.News));
         public IRepository<Personal> Personals => _personalRepository ?? (_personalRepository = new Repository<Personal>(_context.Personals));
+        public IRepository<Album> Albums => _albumRepository ?? (_albumRepository = new Repository<Album>(_context.Albums));
+        public IRepository<MethodicalAssociation> MethodicalAssociations => _associationRepository ?? (_associationRepository = new Repository<MethodicalAssociation>(_context.MethodicalAssociations));
+        public IRepository<Teacher> Teachers => _teacherRepository ?? (_teacherRepository = new Repository<Teacher>(_context.Teachers));
 
         public void Save()
         {
