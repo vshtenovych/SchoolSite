@@ -1,0 +1,40 @@
+.btn-light {
+  background-color: white;
+  border: 1px solid #ced4da;
+}
+.selectpicker .bootstrap-select.btn-group > .dropdown-toggle {
+  height: 38px;
+}
+.selectpicker .dropdown-toggle::after {
+  vertical-align: .5em;
+}
+.table {
+  margin-top: 30px;
+}
+.table thead th {
+  border-bottom-color: #91b3b5;
+}
+.dropdowns-pre-text {
+  font-size: 30px;
+}
+.custom-select {
+  width: 200px;
+}
+.table-headings {
+  background-color: #acc8cc;
+}
+.table-bg {
+  background-color: #d4e3e6;
+}
+.table-bordered td {
+  border: 1px solid #91b3b5;
+}
+.table-bordered th {
+  border: 1px solid #91b3b5;
+}
+.lesson {
+  font-weight: bold;
+}
+.teacher {
+  font-style: italic;
+}

@@ -1,0 +1,67 @@
+﻿@background_color_1: white;
+@background_color_2: #acc8cc;
+@background_color_3: #d4e3e6;
+@border_bottom_color_1: #91b3b5;
+
+.btn-light {
+    background-color: @background_color_1;
+    border: 1px solid #ced4da;
+}
+
+.selectpicker {
+    .bootstrap-select.btn-group {
+        > .dropdown-toggle {
+            height: 38px;
+        }
+    }
+
+    .dropdown-toggle {
+        &::after {
+            vertical-align: .5em;
+        }
+    }
+}
+
+.table {
+    margin-top: 30px;
+
+    thead {
+        th {
+            border-bottom-color: @border_bottom_color_1;
+        }
+    }
+}
+
+.dropdowns-pre-text {
+    font-size: 30px;
+}
+
+.custom-select {
+    width: 200px;
+}
+
+.table-headings {
+    background-color: @background_color_2;
+}
+
+.table-bg {
+    background-color: @background_color_3;
+}
+
+.table-bordered {
+    td {
+        border: 1px solid #91b3b5;
+    }
+
+    th {
+        border: 1px solid #91b3b5;
+    }
+}
+
+.lesson {
+    font-weight: bold;
+}
+
+.teacher {
+    font-style: italic;
+}

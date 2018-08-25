@@ -18,7 +18,7 @@ namespace DNL.Controllers
             _newsService = newsService;
         }
         [ViewLayout("_ProfileLayout")]
-        [Authorize(Roles = "Admins")]
+        [Authorize(Roles = "Admin")]
         public ViewResult Index()
         {
             return View(_newsService.GetAll());
@@ -36,7 +36,7 @@ namespace DNL.Controllers
         }
 
         [ViewLayout("_ProfileLayout")]
-        [Authorize(Roles = "Admins")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ViewResult Create() => View();
         [HttpPost]
@@ -52,7 +52,7 @@ namespace DNL.Controllers
         }
 
         [ViewLayout("_ProfileLayout")]
-        [Authorize(Roles = "Admins")]
+        [Authorize(Roles = "Admin")]
         public ViewResult Edit(int id)
         {
             return View(_newsService.Get(id));

@@ -28,7 +28,13 @@ namespace BLL.AutoMapper
                 config.CreateMap<Album, AlbumViewModel>();
 
                 config.CreateMap<TeacherViewModel, Teacher>();
-                config.CreateMap<Teacher, TeacherViewModel>();
+                config.CreateMap<Teacher, TeacherViewModel>()
+                .ForMember(teacherViewModel => teacherViewModel.Photo, conf => conf.MapFrom(user => user.AppUser.Photo))
+                .ForMember(teacherViewModel => teacherViewModel.FirstName, conf => conf.MapFrom(user => user.AppUser.FirstName))
+                .ForMember(teacherViewModel => teacherViewModel.LastName, conf => conf.MapFrom(user => user.AppUser.LastName));
+
+                config.CreateMap<MethodicalAssociationViewModel, MethodicalAssociation>();
+                config.CreateMap<MethodicalAssociation, MethodicalAssociationViewModel>();
             });
         }
     }

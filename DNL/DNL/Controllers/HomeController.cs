@@ -13,16 +13,17 @@ namespace DNL.Controllers
     public class HomeController : Controller
     {
         private readonly INewsService _newsService;
+        private readonly ITeacherService _teacherService;
 
-        public HomeController(INewsService newsService)
+        public HomeController(INewsService newsService, ITeacherService teacherService)
         {
             _newsService = newsService;
+            _teacherService = teacherService;
         }
 
         public IActionResult Index()
         {
             var news = _newsService.GetAll().Reverse().Take(6);
-
             return View(news);
         }
 
@@ -53,7 +54,8 @@ namespace DNL.Controllers
         }
         public IActionResult MethodicalWork()
         {
-            return View();
+            var result = _teacherService.GetMethodicalAssociations();
+            return View(result);
         }
         public IActionResult EducationalActivities()
         {

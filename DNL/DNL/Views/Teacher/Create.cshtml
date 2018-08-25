@@ -1,6 +1,6 @@
-﻿@using BLL.ViewModels
+﻿@model TeacherViewModel
 
-@model CreateViewModel
+
 <div class="bg-primary m-1 p-1 text-white"><h4>Create User</h4></div>
 <div asp-validation-summary=" All" class="text-danger"></div>
 <form asp-action="Create" method="post">
@@ -17,13 +17,20 @@
         <input asp-for="Password" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Role"></label>
-        <select asp-for="Role" class="form-control">
-            @foreach (RoleEnum role in ViewBag.Roles)
-            {
-                <option value="@role">@role.GetDescription()</option>
-            }
-        </select>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Category"></label>
+        <input asp-for="Category" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="MethodicalAssociation"></label>
+        <input asp-for="MethodicalAssociation" class="form-control" />
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>

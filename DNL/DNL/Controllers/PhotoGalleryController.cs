@@ -20,7 +20,7 @@ namespace DNL.Controllers
         }
 
         [ViewLayout("_ProfileLayout")]
-        [Authorize(Roles = "Admins")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View(_albumService.GetAll());

@@ -1,4 +1,15 @@
-﻿<div class="row">
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/timetable.index.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/timetable.index.css" />
+    </environment>
+}
+
+
+<div class="row">
     <div class="col-md-12">
         <div class="heading">
             <h2>Розклад</h2>
@@ -204,3 +215,14 @@
         </tbody>
     </table>
 </div>
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+        <script src="~/js/timetable.js" type="text/javascript"></script>
+    </environment>
+
+    <environment include="Development">
+        <script src="~/js/timetable.js" type="text/javascript"></script>
+    </environment>
+}

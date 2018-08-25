@@ -16,9 +16,9 @@
     "outputFileName": "wwwroot/css/bundles/profile.layout.min.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/profile.layout.css",
       "wwwroot/lib/bootstrap/css/bootstrap.min.css",
-      "wwwroot/lib/font-awesome.min.css"
+      "wwwroot/lib/font-awesome.min.css",
+      "wwwroot/css/profile.layout.css"
     ]
   },
   // home
@@ -54,7 +54,8 @@
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
       "wwwroot/css/news.allnews.css",
-      "wwwroot/css/news.index.css"
+      "wwwroot/css/news.index.css",
+      "wwwroot/lib/cropper/cropper.min.css"
     ]
   },
   // PhotoGallery
@@ -87,7 +88,8 @@
   {
     "outputFileName": "wwwroot/js/bundles/news.min.js",
     "inputFiles": [
-      "wwwroot/js/news.js"
+      "wwwroot/js/news.js",
+      "wwwroot/lib/cropper/cropper.min.js"
     ]
   },
   //Gallery

@@ -1,0 +1,29 @@
+﻿
+@model IEnumerable<TeacherViewModel>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="heading adaptive-heading">
+            <h2>Склад методичного об'єднання</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+            <div class="col-sm-4 col-6">
+                <center>
+                    <img src="@teacherPhoto" class="teacher-photo">
+                    <div class="name">@item.FirstName @item.LastName</div>
+                    <div class="teacher-info">Вчитель математики</div>
+                    <div class="teacher-info">@item.Category</div>
+
+                </center>
+            </div>
+        }
+    </div>
+</div>

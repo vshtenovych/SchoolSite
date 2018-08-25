@@ -33,6 +33,7 @@ namespace DNL
             services.AddTransient<IAlbumService, AlbumService>();
             services.AddTransient<INewsService, NewsService>();
             services.AddTransient<IPersonalService, PersonalService>();
+            services.AddTransient<ITeacherService, TeacherService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 

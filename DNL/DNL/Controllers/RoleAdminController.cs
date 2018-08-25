@@ -11,7 +11,7 @@ using Core.Entities;
 namespace DNL.Controllers
 {
     [ViewLayout("_ProfileLayout")]
-    [Authorize(Roles = "Admins")]
+    [Authorize(Roles = "Admin")]
     public class RoleAdminController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

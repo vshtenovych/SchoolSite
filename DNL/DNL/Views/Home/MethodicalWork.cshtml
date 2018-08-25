@@ -9,6 +9,7 @@
     </environment>
 }
 
+@model IEnumerable<MethodicalAssociationViewModel>
 
 <div class="row">
     <div class="col-md-12">
@@ -22,36 +23,40 @@
     <ul data-role="treeview">
         <li data-caption="Методичні об'єднання">
             <ul>
-                <li data-caption="Методичне об'єднання вчителів зарубіжної літератури">
-                    <ul>
-                        <li><a href="squad.html">Склад</a></li>
-                        <li><a href="#">Презентація</a></li>
-                    </ul>
-                </li>
-                <li data-caption="Методичне об'єднання вчителів фізичної культури, ЗВ, ОЗ">
-                    <ul>
-                        <li><a href="squad.html">Склад</a></li>
-                        <li><a href="#">Презентація</a></li>
-                    </ul>
-                </li>
-                <li data-caption="Методичне об'єднання вчителів природничих дисциплін">
-                    <ul>
-                        <li><a href="squad.html">Склад</a></li>
-                        <li><a href="#">Презентація</a></li>
-                    </ul>
-                </li>
-                <li data-caption="Методичне об'єднання вчителів математики">
-                    <ul>
-                        <li><a href="squad.html">Склад</a></li>
-                        <li><a href="#">Презентація</a></li>
-                    </ul>
-                </li>
-                <li data-caption="Методичне об'єднання вчителів української мови та літератури">
-                    <ul>
-                        <li><a href="squad.html">Склад</a></li>
-                        <li><a href="#">Презентація</a></li>
-                    </ul>
-                </li>
+                @foreach (var item in Model)
+                {
+                    <li data-caption="@item.Name">
+                        <ul>
+                            <li><a asp-controller="Teacher" asp-action="MethodicalAssociationSquad" asp-route-id="@item.Id">Склад</a></li>
+                            <li><a href="#">Презентація</a></li>
+                        </ul>
+                    </li>
+                }
+
+                @*<li data-caption="Методичне об'єднання вчителів фізичної культури, ЗВ, ОЗ">
+            <ul>
+                <li><a href="squad.html">Склад</a></li>
+                <li><a href="#">Презентація</a></li>
+            </ul>
+        </li>
+        <li data-caption="Методичне об'єднання вчителів природничих дисциплін">
+            <ul>
+                <li><a href="squad.html">Склад</a></li>
+                <li><a href="#">Презентація</a></li>
+            </ul>
+        </li>
+        <li data-caption="Методичне об'єднання вчителів математики">
+            <ul>
+                <li><a href="squad.html">Склад</a></li>
+                <li><a href="#">Презентація</a></li>
+            </ul>
+        </li>
+        <li data-caption="Методичне об'єднання вчителів української мови та літератури">
+            <ul>
+                <li><a href="squad.html">Склад</a></li>
+                <li><a href="#">Презентація</a></li>
+            </ul>
+        </li>*@
             </ul>
         </li>
         <li data-caption="Атестація педпрацівників">
