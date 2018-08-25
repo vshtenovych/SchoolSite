@@ -1,3 +1,6 @@
 .title {
   margin-top: 15px;
 }
+.img-container img {
+  max-width: 100%;
+}

@@ -45,6 +45,3 @@ $(".carousel-control-prev, .carousel-control-next").click(function () {
 });
 
 
-$(".carousel-item").click(function () {
-    alert($(this).attr("news-id"));
-});

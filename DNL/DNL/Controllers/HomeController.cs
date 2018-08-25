@@ -85,6 +85,22 @@ namespace DNL.Controllers
         {
             return View();
         }
+        public IActionResult LegalFramework()
+        {
+            return View();
+        }
+        public IActionResult Guidelines()
+        {
+            return View();
+        }
+        public IActionResult PedagogicalCertification()
+        {
+            return View();
+        }
+        public IActionResult PedagogicsPerspectivePlan()
+        {
+            return View();
+        }
     }
 }
 

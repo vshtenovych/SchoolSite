@@ -1,14 +1,25 @@
 ﻿@section CssFiles {
     <environment include="Staging, Production">
-        <link type="text/css" rel="stylesheet" href="~/css/bundles/home.min.css" />
+        
     </environment>
 
     <environment include="Development">
-        <link type="text/css" rel="stylesheet" href="~/css/home.about.css" />
+        
     </environment>
 }
 
-@Html.Partial("NotFound")
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading adaptive-heading">
+                <h2>Річний план ліцею</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<center><iframe src="https://drive.google.com/file/d/1Qypt-Tx55MTDrm9xhin713rzUUhE30Fj/preview" width="40%" height="640"></iframe></center>
+
 
 @section JsFiles {
 

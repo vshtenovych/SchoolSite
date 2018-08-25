@@ -66,6 +66,16 @@
       "wwwroot/css/gallery.albums.css"
     ]
   },
+  // Timetable
+  {
+    "outputFileName": "wwwroot/css/bundles/timetable.min.css",
+    // An array of relative input file paths. Globbing patterns supported
+    "inputFiles": [
+      "wwwroot/css/timetable.index.css",
+      "wwwroot/lib/bootstap-select/css/bootstrap-select.css"
+    ]
+  },
+
   // JS Files
   // Layout
   {
@@ -81,7 +91,8 @@
     "outputFileName": "wwwroot/js/bundles/home.min.js",
     "inputFiles": [
       "wwwroot/js/home.index.js",
-      "wwwroot/lib/metro/js/metro.min.js"
+      "wwwroot/lib/metro/js/metro.min.js",
+      "wwwroot/lib/touch-swipe/jquery.touchSwipe.min.js"
     ]
   },
   //News
@@ -96,6 +107,15 @@
   {
     "outputFileName": "wwwroot/js/bundles/gallery.min.js",
     "inputFiles": [
+    ]
+  },
+  //Timetable
+  {
+    "outputFileName": "wwwroot/js/bundles/timetable.min.js",
+    "inputFiles": [
+      "wwwroot/js/timetable.js",
+      "wwwroot/lib/bootstrap-select/js/bootstrap-select.js",
+      "wwwroot/lib/popper/popper.min.js"
     ]
   }
 ]

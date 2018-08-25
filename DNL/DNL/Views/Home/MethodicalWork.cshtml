@@ -11,10 +11,12 @@
 
 @model IEnumerable<MethodicalAssociationViewModel>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="heading adaptive-heading">
-            <h2>Науково-методична робота</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading adaptive-heading">
+                <h2>Науково-методична робота</h2>
+            </div>
         </div>
     </div>
 </div>
@@ -32,49 +34,22 @@
                         </ul>
                     </li>
                 }
-
-                @*<li data-caption="Методичне об'єднання вчителів фізичної культури, ЗВ, ОЗ">
-            <ul>
-                <li><a href="squad.html">Склад</a></li>
-                <li><a href="#">Презентація</a></li>
-            </ul>
-        </li>
-        <li data-caption="Методичне об'єднання вчителів природничих дисциплін">
-            <ul>
-                <li><a href="squad.html">Склад</a></li>
-                <li><a href="#">Презентація</a></li>
-            </ul>
-        </li>
-        <li data-caption="Методичне об'єднання вчителів математики">
-            <ul>
-                <li><a href="squad.html">Склад</a></li>
-                <li><a href="#">Презентація</a></li>
-            </ul>
-        </li>
-        <li data-caption="Методичне об'єднання вчителів української мови та літератури">
-            <ul>
-                <li><a href="squad.html">Склад</a></li>
-                <li><a href="#">Презентація</a></li>
-            </ul>
-        </li>*@
             </ul>
         </li>
         <li data-caption="Атестація педпрацівників">
             <ul>
-                <li><a href="#">Нормативно-правова база</a></li>
-                <li><a href="#">Перспективний план атестації педагогів</a></li>
+                <li><a asp-controller="Home" asp-action="LegalFramework">Нормативно-правова база</a></li>
+                <li><a asp-controller="Home" asp-action="PedagogicsPerspectivePlan">Перспективний план атестації педагогів</a></li>
                 <li data-caption="Атестація педпрацівників">
                     <ul>
-                        <li><a href="#">2017/18</a></li>
-                        <li><a href="#">2018/19</a></li>
+                        <li><a asp-controller="Home" asp-action="PedagogicalCertification">2018/19</a></li>
                     </ul>
                 </li>
             </ul>
         </li>
         <li data-caption="Методичні рекомендації">
             <ul>
-                <li><a href="#">2017/18</a></li>
-                <li><a href="#">2018/19</a></li>
+                <li><a asp-controller="Home" asp-action="Guidelines">2018/19</a></li>
             </ul>
         </li>
     </ul>
