@@ -11,7 +11,7 @@
       "wwwroot/lib/bootstrap/css/bootstrap.min.css"
     ]
   },
-  // Profile Layout
+  // ProfileLayout
   {
     "outputFileName": "wwwroot/css/bundles/profile.layout.min.css",
     // An array of relative input file paths. Globbing patterns supported
@@ -84,6 +84,17 @@
       "wwwroot/lib/jquery.js",
       "wwwroot/lib/bootstrap/js/bootstrap.min.js",
       "wwwroot/js/layout.js"
+    ]
+  },
+  // ProfileLayout
+  {
+    "outputFileName": "wwwroot/js/bundles/profile.layout.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery.js",
+      "wwwroot/lib/bootstrap/js/bootstrap.min.js",
+      "wwwroot/js/profile.layout.js",
+      "wwwroot/js/upload.photo.js",
+      "wwwroot/lib/cropper/cropper.min.js"
     ]
   },
   //Home
