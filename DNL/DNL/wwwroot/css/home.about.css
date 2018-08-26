@@ -32,7 +32,8 @@ h2 {
   margin-top: 5px;
 }
 @media screen and (max-width: 650px) {
-  #history img {
+  #history img,
+  #nowadays img {
     width: 100%;
   }
 }
