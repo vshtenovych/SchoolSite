@@ -1,13 +1,24 @@
-﻿
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/teacher.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/teacher.squad.css" />
+    </environment>
+}
 @model IEnumerable<TeacherViewModel>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="heading adaptive-heading">
-            <h2>Склад методичного об'єднання</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading adaptive-heading">
+                <h2></h2>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 <div class="container">
