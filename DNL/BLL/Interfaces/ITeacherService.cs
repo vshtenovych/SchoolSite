@@ -11,5 +11,6 @@ namespace BLL.Interfaces
         void AddTeacher(string userId, TeacherViewModel model);
         IEnumerable<MethodicalAssociationViewModel> GetMethodicalAssociations();
         IEnumerable<TeacherViewModel> GetTeachersByAssociationId(int id);
+        void AddAssociation(MethodicalAssociationViewModel model);
     }
 }

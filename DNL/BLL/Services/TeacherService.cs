@@ -20,9 +20,16 @@ namespace BLL.Services
 
         public void AddTeacher(string userId, TeacherViewModel model)
         {
-            Database.Teachers.Add(new Teacher { UserId = userId, Category = model.Category, MethodicalAssociationId = 1 });
+            Database.Teachers.Add(new Teacher { UserId = userId, Category = model.Category, MethodicalAssociationId = Convert.ToInt32(model.MethodicalAssociation) });
             Database.Save();
         }
+
+        public void AddAssociation(MethodicalAssociationViewModel model)
+        {
+            Database.MethodicalAssociations.Add(new MethodicalAssociation { Name = model.Name, Presentation = model.Presentation });
+            Database.Save();
+        }
+
         public IEnumerable<MethodicalAssociationViewModel> GetMethodicalAssociations()
         {
             var result = Database.MethodicalAssociations.GetAll();

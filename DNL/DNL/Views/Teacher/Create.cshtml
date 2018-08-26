@@ -22,9 +22,8 @@
 </style>
 
 <div class="container">
-    <h2 class="title text-center title">Створити новину</h2>
+    <h2 class="title text-center title">Добавлення вчителя</h2>
     <form asp-action="Create" method="post">
-
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -49,12 +48,12 @@
 
         <input hidden id="PictureSource" asp-for="Photo" />
         <div class="form-group">
-            <label asp-for="Name">Логін</label>
-            <input asp-for="Name" class="form-control" placeholder="Логін">
-        </div>
-        <div class="form-group">
             <label asp-for="Email">Емейл</label>
             <input asp-for="Email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label asp-for="Name">Емейл</label>
+            <input asp-for="Name" class="form-control" placeholder="Name">
         </div>
         <div class="form-group">
             <label asp-for="Password">Пароль</label>
@@ -69,6 +68,11 @@
             <label asp-for="LastName">Прізвище</label>
             <input asp-for="LastName" class="form-control" placeholder="Прізвище">
         </div>
+        <div class="form-group">
+            <label asp-for="MethodicalAssociation" class="control-label">Обєднання</label>
+            <select asp-for="MethodicalAssociation" class="form-control" asp-items="ViewBag.MethodicalAssociationId"></select>
+        </div>
+
         <div class="form-group">
             <label asp-for="Category">Категорія</label>
             <textarea asp-for="Category" class="form-control" placeholder="Категорія"></textarea>

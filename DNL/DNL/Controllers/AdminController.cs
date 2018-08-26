@@ -52,7 +52,6 @@ namespace DNL.Controllers
             return View(model);
         }
 
-        //public ViewResult Create() => View();
         public ViewResult Create()
         {
             ViewBag.Roles = Enum.GetValues(typeof(RoleEnum));

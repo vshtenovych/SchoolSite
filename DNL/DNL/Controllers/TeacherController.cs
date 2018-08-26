@@ -10,6 +10,7 @@ using DNL.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DNL.Controllers
 {
@@ -31,18 +32,42 @@ namespace DNL.Controllers
         {
             return View();
         }
+
         public IActionResult MethodicalAssociationSquad(int id)
         {
             var result = _teacherService.GetTeachersByAssociationId(id);
             return View(result);
         }
 
+        [ViewLayout("_ProfileLayout")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult MethodicalAssociationIndex()
+        {
+            var result = _teacherService.GetMethodicalAssociations();
+            return View(result);
+        }
+
+        [ViewLayout("_ProfileLayout")]
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public ViewResult MethodicalAssociationCreate() => View();
+        [HttpPost]
+        public IActionResult MethodicalAssociationCreate(MethodicalAssociationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _teacherService.AddAssociation(model);
+                return Redirect("~/Admin/Index");
+            }
+            return View(model);
+        }
 
         [ViewLayout("_ProfileLayout")]
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public ViewResult Create()
         {
+            ViewData["MethodicalAssociationId"] = new SelectList(_teacherService.GetMethodicalAssociations(), "Id", "Name");
             return View();
         }
 
@@ -53,7 +78,7 @@ namespace DNL.Controllers
             {
                 AppUser user = new AppUser
                 {
-                    UserName = model.Name,
+                    UserName = model.Email.Split("@").First(),
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
