@@ -8,7 +8,244 @@
     </environment>
 }
 
-@Html.Partial("NotFound")
+    <style type="text/css">
+    #text {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .ball {
+        margin: 85px auto 0 auto;
+    }
+
+    .feature-progress {
+        position: relative
+    }
+
+    .feature-progress-ball {
+        animation: feature-progress-ball 3s ease-in-out infinite;
+        background: black;
+        border-radius: 50%;
+        height: 8px;
+        margin-left: -4px;
+        transform-origin: center bottom;
+        width: 8px
+    }
+
+    @@keyframes feature-progress-ball {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px) scaleY(1)
+        }
+
+        6.25%,
+        18.75%,
+        31.25%,
+        43.75%,
+        56.25%,
+        68.75%,
+        81.25%,
+        93.75% {
+            opacity: 1;
+            transform: translateY(-20px) scaleY(1)
+        }
+
+        12.5%,
+        25%,
+        37.5%,
+        50%,
+        62.5%,
+        75%,
+        87.5% {
+            opacity: 1;
+            transform: translateY(0) scaleY(0.75)
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-10px) scaleY(1)
+        }
+    }
+
+    .feature-progress-ball-wrap {
+        animation: feature-progress-ball-wrap 3s ease-in-out infinite;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+    @@keyframes feature-progress-ball-wrap {
+        0% {
+            transform: translateX(-20%)
+        }
+
+        12.5% {
+            transform: translateX(5%)
+        }
+
+        25% {
+            transform: translateX(20%)
+        }
+
+        37.5% {
+            transform: translateX(35%)
+        }
+
+        50% {
+            transform: translateX(50%)
+        }
+
+        62.5% {
+            transform: translateX(65%)
+        }
+
+        75% {
+            transform: translateX(80%)
+        }
+
+        87.5% {
+            transform: translateX(95%)
+        }
+
+        100% {
+            transform: translateX(120%)
+        }
+    }
+
+    .feature-progress-platform {
+        animation: feature-progress-platform 3s ease both 0.3s infinite;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+        bottom: 0;
+        height: 5px;
+        left: 0;
+        position: absolute;
+        width: 9%
+    }
+
+        .feature-progress-platform:nth-child(2) {
+            animation-delay: 0.7s;
+            left: 15%
+        }
+
+        .feature-progress-platform:nth-child(3) {
+            animation-delay: 1.075s;
+            left: 30%
+        }
+
+        .feature-progress-platform:nth-child(4) {
+            animation-delay: 1.45s;
+            left: 45%
+        }
+
+        .feature-progress-platform:nth-child(5) {
+            animation-delay: 1.825s;
+            left: 60%
+        }
+
+        .feature-progress-platform:nth-child(6) {
+            animation-delay: 2.2s;
+            left: 75%
+        }
+
+        .feature-progress-platform:nth-child(7) {
+            animation-delay: 2.575s;
+            left: 90%
+        }
+
+    @@keyframes feature-progress-platform {
+        0% {
+            background: rgba(255, 255, 255, 0.2)
+        }
+
+        3% {
+            background: black;
+            transform: translateY(4px)
+        }
+
+        6% {
+            background: black;
+            transform: none
+        }
+    }
+    @@media screen and (min-width: 992px){
+      footer{
+          position: fixed;
+          bottom: 56px;
+          width: 100%;
+        }
+        #follow-us-on{
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+        }
+    }
+    </style>
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 ball">
+            <div class="feature-progress" aria-hidden="true">
+                <div class="feature-progress-ball-wrap">
+                    <div class="feature-progress-ball"></div>
+                </div>
+                <div class="feature-progress-platform"></div>
+                <div class="feature-progress-platform"></div>
+                <div class="feature-progress-platform"></div>
+                <div class="feature-progress-platform"></div>
+                <div class="feature-progress-platform"></div>
+                <div class="feature-progress-platform"></div>
+                <div class="feature-progress-platform"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="my-container">
+
+</div>
+<div class="container">
+    <h1 class="text" id="text">На даний час відкритих вакансій немає.</h1>
+</div>
+
+
+<script>
+// logic here
+
+// logic here
+function typeText(element, speed){
+  //   save text to write
+  var textToWrite = element.textContent;
+
+  //   Remove text from element
+  element.innerHTML = "";
+
+  //   size of text for cicle
+  var textSize = textToWrite.length;
+
+  //   Setting up the text on screen
+  for (var i=0; i<textSize; i++){
+      (function(i) {
+          setTimeout(function(){
+            element.innerHTML+=textToWrite.charAt(i);
+          }, speed * i);
+      })(i);
+  }
+}
+
+
+var elementToWrite = document.getElementById("text");
+
+var speedOfEffect = 110;
+
+if($(window).width() >= '992'){
+this.typeText(elementToWrite, speedOfEffect);}
+
+
+</script>
 
 @section JsFiles {
 
