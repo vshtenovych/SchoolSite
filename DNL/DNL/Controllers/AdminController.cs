@@ -37,8 +37,6 @@ namespace DNL.Controllers
             _roleManager = roleManager;
         }
 
-        //public ViewResult Index() => View(userManager.Users.Include(u => u.Personal));
-
         public ViewResult Index()
         {
             dynamic model = new ExpandoObject();

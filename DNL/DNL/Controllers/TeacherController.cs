@@ -19,13 +19,18 @@ namespace DNL.Controllers
         private readonly ITeacherService _teacherService;
         private UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private IUserValidator<AppUser> _userValidator;
+        private IPasswordValidator<AppUser> _passwordValidator;
+        private IPasswordHasher<AppUser> _passwordHasher;
 
-
-        public TeacherController(ITeacherService teacherService, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
+        public TeacherController(ITeacherService teacherService, IPasswordHasher<AppUser> passwordHash, IPasswordValidator<AppUser> passValid, UserManager<AppUser> userManager, IUserValidator<AppUser> userValid, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _teacherService = teacherService;
+            _userValidator = userValid;
             _roleManager = roleManager;
+            _passwordValidator = passValid;
+            _passwordHasher = passwordHash;
         }
 
         public IActionResult Index()
@@ -76,9 +81,10 @@ namespace DNL.Controllers
         {
             if (ModelState.IsValid)
             {
+                var userName = model.Email.Split("@").First();
                 AppUser user = new AppUser
                 {
-                    UserName = model.Email.Split("@").First(),
+                    UserName = userName,
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
@@ -109,5 +115,75 @@ namespace DNL.Controllers
             }
             return View(model);
         }
+
+        public async Task<IActionResult> Edit(string id)
+        {
+            AppUser user = await _userManager.FindByIdAsync(id);
+            if (user != null)
+            {
+                return View(user);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(TeacherViewModel model)
+        {
+            AppUser user = await _userManager.FindByIdAsync(model.UserId);
+            if (user != null)
+            {
+                user.Email = model.Email;
+                IdentityResult validEmail = await _userValidator.ValidateAsync(_userManager, user);
+                if (!validEmail.Succeeded)
+                {
+                    AddErrorsFromResult(validEmail);
+                }
+                IdentityResult validPass = null;
+                if (!string.IsNullOrEmpty(model.Password))
+                {
+                    validPass = await _passwordValidator.ValidateAsync(_userManager, user, model.Password);
+                    if (validPass.Succeeded)
+                    {
+                        user.PasswordHash = _passwordHasher.HashPassword(user,
+                        model.Password);
+                    }
+                    else
+                    {
+                        AddErrorsFromResult(validPass);
+                    }
+                }
+                if ((validEmail.Succeeded && validPass == null)
+                || (validEmail.Succeeded
+                && model.Password != string.Empty && validPass.Succeeded))
+                {
+                    IdentityResult result = await _userManager.UpdateAsync(user);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        AddErrorsFromResult(result);
+                    }
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "User Not Found");
+            }
+            return View(user);
+        }
+
+        private void AddErrorsFromResult(IdentityResult result)
+        {
+            foreach (IdentityError error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+        }
+
     }
 }

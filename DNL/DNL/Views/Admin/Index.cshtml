@@ -84,7 +84,7 @@
                     <td>@item.Email</td>
                     <td>
                         <form asp-action="Delete" asp-route-id="@item.Id" method="post">
-                            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.Id">Редагувати</a>
+                            <a class="btn btn-sm btn-primary" asp-controller="Teacher" asp-action="Edit" asp-route-id="@item.Id">Редагувати</a>
                             <button type="submit" class="btn btn-sm btn-danger">Видалити</button>
                         </form>
                     </td>

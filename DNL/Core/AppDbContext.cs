@@ -16,6 +16,7 @@ namespace Core
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Album> Albums { get; set; }
         public DbSet<AlbumPhoto> AlbumPhotos { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
         public DbSet<MethodicalAssociation> MethodicalAssociations { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)

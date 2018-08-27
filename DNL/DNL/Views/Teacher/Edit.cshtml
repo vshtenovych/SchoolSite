@@ -1,12 +1,12 @@
 ﻿@section CssFiles {
-    <environment include="Staging, Production">
-        <link type="text/css" rel="stylesheet" href="~/css/bundles/news.min.css" />
-    </environment>
+<environment include="Staging, Production">
+    <link type="text/css" rel="stylesheet" href="~/css/bundles/news.min.css" />
+</environment>
 
-    <environment include="Development">
-        <link type="text/css" rel="stylesheet" href="~/css/news.edit.create.css" />
-        <link rel="stylesheet" href="~/lib/cropper/cropper.min.css">
-    </environment>
+<environment include="Development">
+    <link type="text/css" rel="stylesheet" href="~/css/news.edit.create.css" />
+    <link rel="stylesheet" href="~/lib/cropper/cropper.min.css">
+</environment>
 }
 
 
@@ -22,7 +22,7 @@
 </style>
 
 <div class="container">
-    <h2 class="title text-center title">Добавлення вчителя</h2>
+    <h2 class="title text-center title">Редагування вчителя</h2>
     <form asp-action="Create" method="post">
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
