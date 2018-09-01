@@ -39,8 +39,14 @@
                             }
                         </ul>
                     </div>
-                    <div class="teacher-info">@item.Category.GetDescription()</div>
-                    <div class="teacher-info">@item.Rank.GetDescription()</div>
+                    <div class="teacher-info">@item.Category.GetDescription()</div>                    
+                    <div class="teacher-info">
+                        @if (item.Rank != RankEnum.None)
+                        {
+                            @item.Rank.GetDescription()
+                        }
+
+                    </div>
                 </center>
             </div>
         }
