@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Personal\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

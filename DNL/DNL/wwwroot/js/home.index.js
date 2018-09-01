@@ -3,6 +3,11 @@ $('#recipeCarousel').carousel({
     interval: 10000000
 })
 
+$("#news-item").click(function () {
+    var newsId = $(this).data('id');
+    window.location.href = "/News/NewsDetails?newsId=" + newsId;
+});
+
 $('#news-carousel .carousel .carousel-item').each(function () {
     if ($(window).width() >= 768) {
         var next = $(this).next();

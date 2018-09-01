@@ -26,11 +26,11 @@
             foreach (var item in Model)
             {
                 var newsPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
-                <div class="col-md-4 col-sm-6 col-12">
+                <div class="col-md-4 col-sm-6 col-12 news-item" data-id ="@item.Id">
                     <center>
-                        <a asp-controller="News" asp-action="NewsDetails" asp-route-newsId="@item.Id"><img src="@newsPhoto"></a>
+                        <img src="@newsPhoto">
                         <div class="news-date">@item.DateOfPost.ToString("MM.dd.yyyy")</div>
-                        <a href="news_1.html"><div class="news-title">@item.Title</div></a>
+                        <div class="news-title">@item.Title</div>
                         <div>@item.ShortDescription</div>
                     </center>
                 </div>
@@ -39,7 +39,7 @@
     </div>
 </div>
 
-<nav aria-label="Page navigation example">
+@*<nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
         <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous">
@@ -57,11 +57,17 @@
             </a>
         </li>
     </ul>
-</nav>
+</nav>*@
 
 @section JsFiles {
 
     <environment include="Staging, Production">
+        <script>
+            $(".news-item").click(function () {
+                var newsId = $(this).data('id');
+                window.location.href = "/News/NewsDetails?newsId=" + newsId;
+            });
+        </script>
     </environment>
 
     <environment include="Development">

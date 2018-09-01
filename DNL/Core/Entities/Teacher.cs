@@ -14,8 +14,16 @@ namespace Core.Entities
 
         public bool IsManager { get; set; }
 
-        public string AdditionalPosition { get; set; }
 
+
+        [Required]
+        public virtual int AdminPositionId
+        {
+            get => (int)AdminPosition;
+            set => AdminPosition = (AdministrationPositionEnum)value;
+        }
+        [NotMapped]
+        public AdministrationPositionEnum AdminPosition { get; set; }
 
 
 
@@ -41,11 +49,13 @@ namespace Core.Entities
         public CategoryEnum Category { get; set; }
 
 
-
         [ForeignKey(nameof(Entities.MethodicalAssociation)), Required]
         public int MethodicalAssociationId { get; set; }
         public MethodicalAssociation MethodicalAssociation { get; set; }
 
+
+
+        public virtual ICollection<TeacherSubject> TeacherSubjects { get; set; }
 
 
         public string UserId { get; set; }

@@ -35,6 +35,7 @@ namespace DNL
             services.AddTransient<IPersonalService, PersonalService>();
             services.AddTransient<ITeacherService, TeacherService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<ISubjectService, SubjectService>();
 
 
             // connect to db

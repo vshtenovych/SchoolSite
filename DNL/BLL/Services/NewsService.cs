@@ -17,12 +17,5 @@ namespace BLL.Services
 
         }
 
-        public NewsViewModel GetJobInfo(int jobId)
-        {
-            var job = Database.News.Get(1);//.Include(jobs => jobs.JobSkills).ThenInclude(jobs => jobs.Skill).FirstOrDefault(jobs => jobs.Id == jobId);
-
-            var jobViewModel = Mapping.Map<News, NewsViewModel>(job);
-            return jobViewModel;
-        }
     }
 }

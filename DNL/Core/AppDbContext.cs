@@ -18,6 +18,8 @@ namespace Core
         public DbSet<AlbumPhoto> AlbumPhotos { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<MethodicalAssociation> MethodicalAssociations { get; set; }
+        public virtual DbSet<TeacherSubject> TeacherSubjects { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options) { }
@@ -25,16 +27,37 @@ namespace Core
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
+            //ONE-TO-ONE
 
+            //AppUser-Personal
             modelBuilder.Entity<AppUser>()
                 .HasOne(a => a.Personal)
                 .WithOne(b => b.AppUser)
                 .HasForeignKey<Personal>(b => b.UserId);
 
+            //AppUser-Teacher
             modelBuilder.Entity<AppUser>()
                 .HasOne(a => a.Teacher)
                 .WithOne(b => b.AppUser)
                 .HasForeignKey<Teacher>(b => b.UserId);
+
+
+
+            //MANY-TO-MANY
+            // JobSkills
+            modelBuilder.Entity<TeacherSubject>()
+                .HasKey(teacherSubjects => new { teacherSubjects.TeacherId, teacherSubjects.SubjectId });
+
+            modelBuilder.Entity<TeacherSubject>()
+                .HasOne(teacherSubject => teacherSubject.Teacher)
+                .WithMany(teacher => teacher.TeacherSubjects)
+                .HasForeignKey(teacherSubject => teacherSubject.TeacherId);
+
+            modelBuilder.Entity<TeacherSubject>()
+                .HasOne(teacherSubject => teacherSubject.Subject)
+                .WithMany(subject => subject.TeacherSubjects)
+                .HasForeignKey(teacherSubject => teacherSubject.SubjectId);
         }
 
         public static async Task CreateAppUserAccount(IServiceProvider serviceProvider,

@@ -26,7 +26,7 @@ namespace DNL.Controllers
 
         public IActionResult AllNews()
         {
-            return View(_newsService.GetAll());
+            return View(_newsService.GetAll().Reverse());
         }
 
         public IActionResult NewsDetails(int newsId)

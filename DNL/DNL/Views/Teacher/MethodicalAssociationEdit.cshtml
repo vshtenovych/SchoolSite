@@ -1,0 +1,39 @@
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+
+    </environment>
+}
+
+
+@model MethodicalAssociationViewModel
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div class="container">
+    <h2 class="title text-center title">Редагувати асоціацію</h2>
+    <form asp-action="MethodicalAssociationEdit" method="post">
+        <div class="form-group">
+            <label asp-for="Name">Назва</label>
+            <input asp-for="Name" class="form-control" placeholder="Назва">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Presentation">Презентація</label>
+            <input asp-for="Presentation" class="form-control" placeholder="Презентація">
+        </div>
+        <button class="btn btn-primary" type="submit">Зберегти</button>
+        <a asp-action="Index" class="btn btn-secondary">Назад до списку</a>
+    </form>
+</div>
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}

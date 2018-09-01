@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Core.Enums
 {
-    public enum RankEnum
+    public enum AdministrationPositionEnum
     {
         [Description("Не вибрано")]
         None = 0,
-        [Description("Старший вчитель")]
-        Senior = 1,
-        [Description("Вчитель методист")]
-        Methodist = 2
+        [Description("Директор")]
+        Director = 1,
+        [Description("Заступник директора")]
+        Assistant = 2
     }
 }

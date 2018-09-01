@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BLL.Interfaces
 {
-    public interface INewsService : IService<News, NewsViewModel>
+    public interface ISubjectService : IService<Subject, SubjectViewModel>
     {
     }
 }

@@ -12,6 +12,8 @@ namespace DAL.Interfaces
         IRepository<Album> Albums { get; }
         IRepository<MethodicalAssociation> MethodicalAssociations { get; }
         IRepository<Teacher> Teachers { get; }
+        IRepository<Subject> Subjects { get; }
+        IRepository<TeacherSubject> TeacherSubjects { get; }
 
         void Save();
 

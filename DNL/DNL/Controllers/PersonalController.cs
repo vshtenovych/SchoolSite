@@ -18,11 +18,7 @@ namespace DNL.Controllers
         {
             return View();
         }
-        public IActionResult Administration()
-        {
-            var result = _personalService.GetAll();   
-            return View(result);
-        }
+        
 
     }
 }

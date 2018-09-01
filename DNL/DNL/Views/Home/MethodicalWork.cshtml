@@ -30,7 +30,7 @@
                     <li data-caption="@item.Name">
                         <ul>
                             <li><a asp-controller="Teacher" asp-action="MethodicalAssociationSquad" asp-route-id="@item.Id">Склад</a></li>
-                            <li><a href="#">Презентація</a></li>
+                            <li><a asp-controller="Teacher" asp-action="MethodicalAssociationPresentation" asp-route-id="@item.Id">Презентація</a></li>
                         </ul>
                     </li>
                 }

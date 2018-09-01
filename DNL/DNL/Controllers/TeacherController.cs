@@ -22,10 +22,13 @@ namespace DNL.Controllers
         private IUserValidator<AppUser> _userValidator;
         private IPasswordValidator<AppUser> _passwordValidator;
         private IPasswordHasher<AppUser> _passwordHasher;
+        private readonly ISubjectService _subjectService;
 
-        public TeacherController(ITeacherService teacherService, IPasswordHasher<AppUser> passwordHash, IPasswordValidator<AppUser> passValid, UserManager<AppUser> userManager, IUserValidator<AppUser> userValid, RoleManager<IdentityRole> roleManager)
+
+        public TeacherController(ITeacherService teacherService, ISubjectService subjectService, IPasswordHasher<AppUser> passwordHash, IPasswordValidator<AppUser> passValid, UserManager<AppUser> userManager, IUserValidator<AppUser> userValid, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
+            _subjectService = subjectService;
             _teacherService = teacherService;
             _userValidator = userValid;
             _roleManager = roleManager;
@@ -38,11 +41,27 @@ namespace DNL.Controllers
             return View();
         }
 
+
         public IActionResult MethodicalAssociationSquad(int id)
         {
             var result = _teacherService.GetTeachersByAssociationId(id);
+            ViewBag.AssociationName = _teacherService.GetAssociationNameById(id);
             return View(result);
         }
+
+        public IActionResult Administration()
+        {
+            var result = _teacherService.GetAdministration();
+            return View(result);
+        }
+
+
+        public IActionResult MethodicalAssociationPresentation(int id)
+        {
+            return View(_teacherService.GetAssociationById(id));
+        }
+
+
 
         [ViewLayout("_ProfileLayout")]
         [Authorize(Roles = "Admin")]
@@ -51,6 +70,9 @@ namespace DNL.Controllers
             var result = _teacherService.GetMethodicalAssociations();
             return View(result);
         }
+
+
+
 
         [ViewLayout("_ProfileLayout")]
         [Authorize(Roles = "Admin")]
@@ -62,16 +84,44 @@ namespace DNL.Controllers
             if (ModelState.IsValid)
             {
                 _teacherService.AddAssociation(model);
-                return Redirect("~/Admin/Index");
+                return RedirectToAction("MethodicalAssociationIndex");
             }
             return View(model);
         }
+
+
+
+
+        [ViewLayout("_ProfileLayout")]
+        [Authorize(Roles = "Admin")]
+        public ViewResult MethodicalAssociationEdit(int id)
+        {
+            return View(_teacherService.GetAssociationById(id));
+        }
+        [HttpPost]
+        public IActionResult MethodicalAssociationEdit(MethodicalAssociationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _teacherService.UpdateAssociation(model);
+                return RedirectToAction("MethodicalAssociationIndex");
+            }
+            return View(model);
+        }
+
+
+
+
 
         [ViewLayout("_ProfileLayout")]
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public ViewResult Create()
         {
+            ViewBag.Categories = Enum.GetValues(typeof(CategoryEnum));
+            ViewBag.Ranks = Enum.GetValues(typeof(RankEnum));
+            ViewBag.AdminPositions = Enum.GetValues(typeof(AdministrationPositionEnum));
+            ViewData["Subjects"] = new SelectList(_subjectService.GetAll(), "Name", "Name");
             ViewData["MethodicalAssociationId"] = new SelectList(_teacherService.GetMethodicalAssociations(), "Id", "Name");
             return View();
         }
@@ -116,12 +166,24 @@ namespace DNL.Controllers
             return View(model);
         }
 
+
+
+
+
+
+        [ViewLayout("_ProfileLayout")]
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
             AppUser user = await _userManager.FindByIdAsync(id);
+            
             if (user != null)
             {
-                return View(user);
+                ViewData["MethodicalAssociationId"] = new SelectList(_teacherService.GetMethodicalAssociations(), "Id", "Name");
+                ViewData["Subjects"] = new SelectList(_subjectService.GetAll(), "Name", "Name");
+                var teacher = _teacherService.GetTeacherByUserId(id);
+                return View(teacher);
             }
             else
             {
@@ -135,6 +197,9 @@ namespace DNL.Controllers
             AppUser user = await _userManager.FindByIdAsync(model.UserId);
             if (user != null)
             {
+                user.Photo = model.Photo;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
                 user.Email = model.Email;
                 IdentityResult validEmail = await _userValidator.ValidateAsync(_userManager, user);
                 if (!validEmail.Succeeded)
@@ -155,14 +220,13 @@ namespace DNL.Controllers
                         AddErrorsFromResult(validPass);
                     }
                 }
-                if ((validEmail.Succeeded && validPass == null)
-                || (validEmail.Succeeded
-                && model.Password != string.Empty && validPass.Succeeded))
+                if ((validEmail.Succeeded && validPass == null) || (validEmail.Succeeded && model.Password != string.Empty && validPass.Succeeded))
                 {
                     IdentityResult result = await _userManager.UpdateAsync(user);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index");
+                        _teacherService.UpdateTeacher(model);
+                        return Redirect("~/Admin/Index");
                     }
                     else
                     {

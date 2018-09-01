@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="heading adaptive-heading">
-                <h2></h2>
+                <h2 class="text-center">@ViewBag.AssociationName</h2>
             </div>
         </div>
     </div>
@@ -31,8 +31,8 @@
                     <img src="@teacherPhoto" class="teacher-photo">
                     <div class="name">@item.FirstName @item.LastName</div>
                     <div class="teacher-info">Вчитель математики</div>
-                    <div class="teacher-info">@item.Category</div>
-
+                    <div class="teacher-info">@item.Category.GetDescription()</div>
+                    <div class="teacher-info">@item.Rank.GetDescription()</div>
                 </center>
             </div>
         }

@@ -1,0 +1,31 @@
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}
+
+@model MethodicalAssociationViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading adaptive-heading">
+                <h2 class="text-center">@Model.Name</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<center><iframe src="@Model.Presentation" width="40%" height="640"></iframe></center>
+
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}
