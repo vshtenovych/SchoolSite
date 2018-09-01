@@ -51,7 +51,7 @@
         </div>
         <div hidden class="form-group">
             <label asp-for="DateOfPost">Короткий опис новини</label>
-            <input asp-for="DateOfPost" class="form-control" placeholder="Короткий опис">
+            <input pattern=".{30,55}" asp-for="DateOfPost" class="form-control" placeholder="Короткий опис">
         </div>
         <div class="form-group">
             <label asp-for="LongDescription">Довгий опис новини</label>

@@ -9,7 +9,7 @@ namespace Core.Enums
     {
         [Description("Не вибрано")]
         None = 0,
-        [Description("Старший вчитель")]
+        [Description("Старший учитель")]
         Senior = 1,
         [Description("Вчитель методист")]
         Methodist = 2

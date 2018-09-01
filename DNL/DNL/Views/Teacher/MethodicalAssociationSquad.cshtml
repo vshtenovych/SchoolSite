@@ -29,8 +29,16 @@
             <div class="col-sm-4 col-6">
                 <center>
                     <img src="@teacherPhoto" class="teacher-photo">
-                    <div class="name">@item.FirstName @item.LastName</div>
-                    <div class="teacher-info">Вчитель математики</div>
+                    <div class="name mb-2">@item.FirstName @item.LastName</div>
+                    <div class="teacher-info">
+                        <p class="m-0">Предмети :</p>
+                        <ul class="list-unstyled">
+                            @foreach (var subject in item.Subjects)
+                            {
+                                <li class="font-italic">@subject</li>
+                            }
+                        </ul>
+                    </div>
                     <div class="teacher-info">@item.Category.GetDescription()</div>
                     <div class="teacher-info">@item.Rank.GetDescription()</div>
                 </center>

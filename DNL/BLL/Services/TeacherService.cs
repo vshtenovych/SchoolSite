@@ -91,7 +91,7 @@ namespace BLL.Services
 
         public IEnumerable<TeacherViewModel> GetTeachersByAssociationId(int id)
         {
-            var result = Database.Teachers.GetAll().Include(teacher => teacher.AppUser).Where(teacher => teacher.MethodicalAssociationId == id);
+            var result = Database.Teachers.GetAll().Include(teacher => teacher.AppUser).Include(teacher => teacher.TeacherSubjects).ThenInclude(teacher => teacher.Subject).Where(teacher => teacher.MethodicalAssociationId == id);
             return Mapping.Map<IEnumerable<Teacher>, IEnumerable<TeacherViewModel>>(result);
         }
     }
