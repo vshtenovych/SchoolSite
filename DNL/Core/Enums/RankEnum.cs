@@ -11,7 +11,7 @@ namespace Core.Enums
         None = 0,
         [Description("Старший учитель")]
         Senior = 1,
-        [Description("Вчитель методист")]
+        [Description("Учитель-методист")]
         Methodist = 2
     }
 }
