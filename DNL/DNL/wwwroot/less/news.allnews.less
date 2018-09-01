@@ -1,29 +1,33 @@
 ﻿@color_1: #212529;
 
 .news {
-    a {
-        color: @color_1;
+    .news-item {
+        cursor: pointer;
 
-        &:hover {
-            text-decoration: none;
+        a {
+            color: @color_1;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
-    }
 
-    p {
-        font-size: 17px;
-    }
+        p {
+            font-size: 17px;
+        }
 
-    .news-title {
-        font-size: 22px;
-        font-weight: bold;
-    }
+        .news-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
 
-    .news-date {
-        font-size: 13px;
-    }
+        .news-date {
+            font-size: 13px;
+        }
 
-    img {
-        width: 95%;
+        img {
+            width: 95%;
+        }
     }
 }
 

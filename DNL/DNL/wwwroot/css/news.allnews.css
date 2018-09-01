@@ -1,20 +1,23 @@
-.news a {
+.news .news-item {
+  cursor: pointer;
+}
+.news .news-item a {
   color: #212529;
 }
-.news a:hover {
+.news .news-item a:hover {
   text-decoration: none;
 }
-.news p {
+.news .news-item p {
   font-size: 17px;
 }
-.news .news-title {
+.news .news-item .news-title {
   font-size: 22px;
   font-weight: bold;
 }
-.news .news-date {
+.news .news-item .news-date {
   font-size: 13px;
 }
-.news img {
+.news .news-item img {
   width: 95%;
 }
 .page-link {

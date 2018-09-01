@@ -1,4 +1,4 @@
-.news a{color:#212529}.news a:hover{text-decoration:none}.news p{font-size:17px}.news .news-title{font-size:22px;font-weight:bold}.news .news-date{font-size:13px}.news img{width:95%}.page-link{color:#48607a}.pagination{margin-top:0}.col-md-4,.col-sm-6,.col-12{margin-bottom:50px}.title{margin-top:15px}.bnt-add-new{margin-bottom:20px}
+.news .news-item{cursor:pointer}.news .news-item a{color:#212529}.news .news-item a:hover{text-decoration:none}.news .news-item p{font-size:17px}.news .news-item .news-title{font-size:22px;font-weight:bold}.news .news-item .news-date{font-size:13px}.news .news-item img{width:95%}.page-link{color:#48607a}.pagination{margin-top:0}.col-md-4,.col-sm-6,.col-12{margin-bottom:50px}.title{margin-top:15px}.bnt-add-new{margin-bottom:20px}
 /*!
  * Cropper.js v1.4.1
  * https://fengyuanchen.github.io/cropperjs

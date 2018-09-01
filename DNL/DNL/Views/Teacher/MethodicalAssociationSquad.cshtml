@@ -25,7 +25,13 @@
     <div class="row">
         @foreach (var item in Model)
         {
-            var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+            
+            var teacherPhoto = "../../images/default_user_image.jpg";
+            if (!string.IsNullOrEmpty(item.Photo))
+            {
+                teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+            }
+            
             <div class="col-sm-4 col-6">
                 <center>
                     <img src="@teacherPhoto" class="teacher-photo">
@@ -39,7 +45,7 @@
                             }
                         </ul>
                     </div>
-                    <div class="teacher-info">@item.Category.GetDescription()</div>                    
+                    <div class="teacher-info">@item.Category.GetDescription()</div>
                     <div class="teacher-info">
                         @if (item.Rank != RankEnum.None)
                         {

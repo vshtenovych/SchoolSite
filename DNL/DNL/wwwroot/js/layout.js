@@ -13,8 +13,3 @@ $('body').on('mouseenter mouseleave', '.navbar .dropdown', function (e) {
 $(function () {
     $("#news-item").first().addClass('active');
 });
-
-$("#news-block").click(function () {
-    var newsId = $(this).data('id');
-    window.location.href = "/News/NewsDetails?newsId=" + newsId;
-});
