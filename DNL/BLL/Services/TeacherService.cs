@@ -63,7 +63,12 @@ namespace BLL.Services
             var result = Mapping.Map<MethodicalAssociationViewModel, MethodicalAssociation>(model);
             Database.MethodicalAssociations.Update(result);
             Database.Save();
+        }
 
+        public void DeleteAssociation(int id)
+        {
+            Database.MethodicalAssociations.Delete(id);
+            Database.Save();
         }
 
         public IEnumerable<TeacherViewModel> GetAdministration()

@@ -110,7 +110,12 @@ namespace DNL.Controllers
         }
 
 
-
+        [HttpPost]
+        public IActionResult DeleteAssociation(int id)
+        {
+            _teacherService.DeleteAssociation(id);
+            return RedirectToAction("MethodicalAssociationIndex");
+        }
 
 
         [ViewLayout("_ProfileLayout")]

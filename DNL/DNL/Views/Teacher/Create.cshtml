@@ -115,7 +115,7 @@
         
 
         <button class="btn btn-primary" type="submit">Зберегти</button>
-        <a asp-action="Index" class="btn btn-secondary">Назад до списку</a>
+        <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary">Назад до списку</a>
     </form>
 </div>
 
@@ -123,7 +123,7 @@
 @section JsFiles {
 
     <environment include="Staging, Production">
-        <script src="~/js/bundles/news.min.js" type="text/javascript"></script>
+        
         <script>
             $(document).ready(function () {
                 $('#IsManager').change(function () {
@@ -178,6 +178,7 @@
 
             });
         </script>
+        <script src="~/js/upload.square.photo.js"></script>
     </environment>
 
     <environment include="Development">

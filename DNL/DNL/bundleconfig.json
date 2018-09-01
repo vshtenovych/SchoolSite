@@ -103,7 +103,6 @@
       "wwwroot/lib/jquery.js",
       "wwwroot/lib/bootstrap/js/bootstrap.min.js",
       "wwwroot/js/profile.layout.js",
-      "wwwroot/js/upload.photo.js",
       "wwwroot/lib/cropper/cropper.min.js"
     ]
   },
@@ -121,7 +120,8 @@
     "outputFileName": "wwwroot/js/bundles/news.min.js",
     "inputFiles": [
       "wwwroot/js/news.js",
-      "wwwroot/lib/cropper/cropper.min.js"
+      "wwwroot/lib/cropper/cropper.min.js",
+      "wwwroot/js/upload.photo.js"
     ]
   },
   //Gallery

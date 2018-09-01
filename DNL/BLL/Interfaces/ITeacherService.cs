@@ -18,5 +18,6 @@ namespace BLL.Interfaces
         void UpdateTeacher(TeacherViewModel model);
         MethodicalAssociationViewModel GetAssociationById(int id);
         void UpdateAssociation(MethodicalAssociationViewModel model);
+        void DeleteAssociation(int id);
     }
 }
