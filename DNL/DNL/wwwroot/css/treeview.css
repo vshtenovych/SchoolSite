@@ -1,3 +1,16 @@
+/* Correct image of footer */
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  min-height: 42%;
+  margin-bottom: -50px;
+}
+.push {
+  height: 50px;
+}
 footer {
   margin-top: 30px;
 }

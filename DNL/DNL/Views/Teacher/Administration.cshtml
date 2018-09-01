@@ -1,10 +1,11 @@
 ﻿@section CssFiles {
     <environment include="Staging, Production">
-        <link type="text/css" rel="stylesheet" href="~/css/bundles/news.min.css" />
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/teacher.min.css" />
     </environment>
 
     <environment include="Development">
-        <link type="text/css" rel="stylesheet" href="~/css/news.index.css" />
+        
+        <link rel="stylesheet" href="~/css/teacher.administration.css" />
     </environment>
 }
 
@@ -21,23 +22,86 @@
 </div>
 
 
-<div class="container">
-    <h1>Директор ліцею</h1>
-    @foreach (var item in Model)
-    {
-        if (item.AdminPosition == AdministrationPositionEnum.Director)
+@*<div class="container">
+        <h1>Директор ліцею</h1>
+        @foreach (var item in Model)
         {
-            var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
-            <div class="row">
-                <div class="col-sm-4 col-6">
+            if (item.AdminPosition == AdministrationPositionEnum.Director)
+            {
+                var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+                <div class="row">
+                    <div class="col-sm-4 col-6">
+                        <center>
+                            <img src="@teacherPhoto" class="teacher-photo">
+                            <div class="name">@item.FirstName @item.LastName</div>
+                            <div class="teacher-info">
+                                <p style="margin:0px;">
+                                    Предмети:
+                                </p>
+                                <ul style="list-style:none;">
+                                    @foreach (var subject in item.Subjects)
+                                    {
+                                        <li>@subject</li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="teacher-info">@item.Category.GetDescription()</div>
+                        </center>
+                    </div>
+                </div>
+            }
+        }
+
+        <h2>Заступники директора</h2>
+        @foreach (var item in Model)
+        {
+            if (item.AdminPosition == AdministrationPositionEnum.Assistant)
+            {
+                var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+                <div class="row">
+                    <div class="col-sm-4 col-6">
+                        <center>
+                            <img src="@teacherPhoto" class="teacher-photo">
+                            <div class="name">
+                                <p>@item.FirstName @item.LastName</p>
+                            </div>
+                            <div class="teacher-info">
+                                <p style="margin:0px;">
+                                    Предмети:
+                                </p>
+                                <ul style="list-style:none;">
+                                    @foreach (var subject in item.Subjects)
+                                    {
+                                        <li>@subject</li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="teacher-info">
+                                <p>@item.Category.GetDescription()</p>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            }
+        }
+    </div>*@
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.AdminPosition == AdministrationPositionEnum.Director)
+            {
+                var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+                <div class="col-md-3 col-6">
                     <center>
                         <img src="@teacherPhoto" class="teacher-photo">
                         <div class="name">@item.FirstName @item.LastName</div>
+                        <div class="teacher-info">@item.AdminPosition.GetDescription()</div>
                         <div class="teacher-info">
-                            <p style="margin:0px;">
-                                Предмети:
-                            </p>
-                            <ul style="list-style:none;">
+                            <p>Предмети :</p>
+                            <ul class="list-unstyled">
                                 @foreach (var subject in item.Subjects)
                                 {
                                     <li>@subject</li>
@@ -45,42 +109,37 @@
                             </ul>
                         </div>
                         <div class="teacher-info">@item.Category.GetDescription()</div>
+                        <div class="teacher-info">@item.Rank.GetDescription()</div>
                     </center>
                 </div>
-            </div>
+            }
         }
-    }
 
-    <h2>Заступники директора</h2>
-    @foreach (var item in Model)
-    {
-        if (item.AdminPosition == AdministrationPositionEnum.Assistant)
+
+        @foreach (var item in Model)
         {
-            var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
-            <div class="row">
-                <div class="col-sm-4 col-6">
+            if (item.AdminPosition != AdministrationPositionEnum.Director)
+            {
+                var teacherPhoto = string.Format("data:image/gif;base64,{0}", item.Photo);
+                <div class="col-md-3 col-6">
                     <center>
                         <img src="@teacherPhoto" class="teacher-photo">
-                        <div class="name">
-                            <p>@item.FirstName @item.LastName</p>                         
-                        </div>
+                        <div class="name">@item.FirstName @item.LastName</div>
+                        <div class="teacher-info">@item.AdminPosition.GetDescription()</div>
                         <div class="teacher-info">
-                            <p style="margin:0px;">
-                                Предмети:
-                            </p>
-                            <ul style="list-style:none;">
+                            <p>Предмети : </p>
+                            <ul class="list-unstyled">
                                 @foreach (var subject in item.Subjects)
                                 {
                                     <li>@subject</li>
                                 }
                             </ul>
                         </div>
-                        <div class="teacher-info">
-                            <p>@item.Category.GetDescription()</p>
-                        </div>
+                        <div class="teacher-info">@item.Category.GetDescription()</div>
+                        <div class="teacher-info">@item.Rank.GetDescription()</div>
                     </center>
-                </div>                
-            </div>
+                </div>
+            }
         }
-    }
+    </div>
 </div>

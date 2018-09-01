@@ -21,38 +21,41 @@
     </div>
 </div>
 
-<div class="container">
-    <ul data-role="treeview">
-        <li data-caption="Методичні об'єднання">
-            <ul>
-                @foreach (var item in Model)
-                {
-                    <li data-caption="@item.Name">
+<div class="wrapper">
+    <div class="container">
+        <ul data-role="treeview">
+            <li data-caption="Методичні об'єднання">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li data-caption="@item.Name">
+                            <ul>
+                                <li><a asp-controller="Teacher" asp-action="MethodicalAssociationSquad" asp-route-id="@item.Id">Склад</a></li>
+                                <li><a href="#">Презентація</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </li>
+            <li data-caption="Атестація педпрацівників">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="LegalFramework">Нормативно-правова база</a></li>
+                    <li><a asp-controller="Home" asp-action="PedagogicsPerspectivePlan">Перспективний план атестації педагогів</a></li>
+                    <li data-caption="Атестація педпрацівників">
                         <ul>
-                            <li><a asp-controller="Teacher" asp-action="MethodicalAssociationSquad" asp-route-id="@item.Id">Склад</a></li>
-                            <li><a asp-controller="Teacher" asp-action="MethodicalAssociationPresentation" asp-route-id="@item.Id">Презентація</a></li>
+                            <li><a asp-controller="Home" asp-action="PedagogicalCertification">2018/19</a></li>
                         </ul>
                     </li>
-                }
-            </ul>
-        </li>
-        <li data-caption="Атестація педпрацівників">
-            <ul>
-                <li><a asp-controller="Home" asp-action="LegalFramework">Нормативно-правова база</a></li>
-                <li><a asp-controller="Home" asp-action="PedagogicsPerspectivePlan">Перспективний план атестації педагогів</a></li>
-                <li data-caption="Атестація педпрацівників">
-                    <ul>
-                        <li><a asp-controller="Home" asp-action="PedagogicalCertification">2018/19</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li data-caption="Методичні рекомендації">
-            <ul>
-                <li><a asp-controller="Home" asp-action="Guidelines">2018/19</a></li>
-            </ul>
-        </li>
-    </ul>
+                </ul>
+            </li>
+            <li data-caption="Методичні рекомендації">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Guidelines">2018/19</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="push"></div>
 </div>
 
 @section JsFiles {

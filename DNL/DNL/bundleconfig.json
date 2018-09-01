@@ -81,6 +81,7 @@
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
       "wwwroot/css/teacher.squad.css",
+      "wwwroot/css/teacher.administration.css"
     ]
   },
 
