@@ -101,6 +101,10 @@ namespace DNL.Controllers
         {
             return View();
         }
+        public IActionResult NationalPatrioticEducation()
+        {
+            return View();
+        }
     }
 }
 

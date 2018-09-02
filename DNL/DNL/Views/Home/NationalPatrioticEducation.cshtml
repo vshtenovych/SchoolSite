@@ -1,0 +1,32 @@
+﻿@section CssFiles {
+    <environment include="Staging, Production">
+        <link type="text/css" rel="stylesheet" href="~/css/bundles/home.min.css" />
+    </environment>
+
+    <environment include="Development">
+        <link type="text/css" rel="stylesheet" href="~/css/home.about.css" />
+    </environment>
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading adaptive-heading">
+                <h2>Національно-патріотичне виховання</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<center><iframe id="document-iframe" src="https://drive.google.com/file/d/1BB-aoGMqQbker9Le4B3VnwSxLi8TD975/preview" height="640"></iframe></center>
+
+
+@section JsFiles {
+
+    <environment include="Staging, Production">
+    </environment>
+
+    <environment include="Development">
+    </environment>
+}
