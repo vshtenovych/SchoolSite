@@ -1,10 +1,97 @@
-﻿<div id="content">
-    <main id="main" class="panel">
-        <i class="fas fa-bars js-slideout-toggle"></i>
-        <figure>
-            <img class="avatar" src="https://www.weblancer.net/img/userpic_male.png" width=150>
-            <figcaption>Толстый кот</figcaption>
-        </figure>
-        <p></p>
-    </main>
-</div>
+﻿<style>
+    figure {
+        text-align: center;
+        background-image: url("../../images/user_avatar_background.jpg");
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+
+    figcaption {
+        font-size: 25px;
+        color: #ffffff;
+        font-weight: 500;
+        margin-top: 7px;
+    }
+
+
+    .avatar {
+        border-radius: 50%;
+        border: 2px solid white;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+    }
+
+    .change-avatar {
+        display: none;
+        position: absolute;
+        top: 79px;
+        left: 568px;
+    }
+
+    .avatar-container:hover .change-avatar {
+        display: block;
+    }
+
+    .avatar-container:hover .avatar {
+        opacity: 0.55;
+    }
+
+    .avatar-container:hover {
+        cursor: pointer;
+    }
+
+    .fa-camera {
+        color: white;
+        font-size: 50px;
+    }
+
+    .nav-item {
+        margin: 0 auto;
+    }
+
+    .tabs li {
+        margin: 0 auto;
+    }
+
+    li .active {
+        border-bottom: 2px solid #5b76a3;
+    }
+
+    .nav-link {
+        padding: .3rem .3rem;
+    }
+
+    a {
+        transition: none;
+    }
+
+        a:hover {
+            transition: none;
+        }
+
+        a:focus {
+            transition: none;
+        }
+
+    .tab-pane {
+        padding-top: 20px;
+    }
+
+    .tab-pane p {
+        margin-bottom: .7rem;
+    }
+
+    .fa-bars {
+        position: absolute;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 30px;
+    }
+</style>
+<figure>
+    <img class="avatar" src="https://www.weblancer.net/img/userpic_male.png" width=150>
+    <figcaption>Толстый кот</figcaption>
+</figure>
+<p></p>
+

@@ -24,24 +24,27 @@
     <div class="sidebar-menu" id="mobile-menu">
         <p>Кабінет</p>
         <ul class="list-unstyled">
-            <li><a href="#"><i class="fas fa-home"></i>Мій профіль</a></li>
-            <li><a href="#"><i class="fas fa-briefcase"></i>Журнал</a></li>
-            <li><a href="#"><i class="fas fa-graduation-cap"></i>Віртуальне навчальне середовище</a></li>
-            <li><a href="#"><i class="fas fa-sign-out-alt"></i>Вийти</a></li>
+            <li><a asp-controller="Profile" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i>Мій профіль</a></li>
+            <li><a href="#"><i class="fa fa-briefcase" aria-hidden="true"></i>Журнал</a></li>
+            <li><a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>ВНС</a></li>
+            <li><a asp-controller="Home" asp-action="Index"><i class="fa fa-chevron-left" aria-hidden="true"></i>Повернутися до сайту</a></li>
+            <li><a asp-controller="Account" asp-action="Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Вийти</a></li>
         </ul>
 
         <p>Адміністрування сайту</p>
         <ul class="list-unstyled">
-            <li><a href="#"><i class="fas fa-newspaper"></i>Новини</a></li>
-            <li><a href="#"><i class="fas fa-calendar-alt"></i>Розклад</a></li>
-            <li><a href="#"><i class="fas fa-images"></i>Фотогалерея</a></li>
+            <li><a asp-controller="News" asp-action="Index"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Новини</a></li>
+            <li><a href="#"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Розклад</a></li>
+            <li><a asp-controller="PhotoGallery" asp-action="Index"><i class="fa fa-picture-o" aria-hidden="true"></i>Фотогалерея</a></li>
+            <li><a asp-controller="Teacher" asp-action="MethodicalAssociationIndex"><i class="fa fa-users" aria-hidden="true"></i>Методичні об'єднання</a></li>
+            <li><a asp-controller="Admin" asp-action="Index"><i class="fa fa-user" aria-hidden="true"></i>Користувачі</a></li>
         </ul>
     </div>
 
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 sidebar-menu" id="desktop-menu">
+            <div class="col-lg-3 sidebar-menu p-0" id="desktop-menu">
                 <p>Кабінет</p>
                 <ul class="list-unstyled">
                     <li><a asp-controller="Profile" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i>Мій профіль</a></li>
@@ -60,9 +63,9 @@
                     <li><a asp-controller="Admin" asp-action="Index"><i class="fa fa-user" aria-hidden="true"></i>Користувачі</a></li>
                 </ul>
             </div>
-            <div class="col-md-9 col-12">
+            <div class="col-lg-9 col-12 p-0">
                 <main id="main" class="panel">
-                    <i class="fas fa-bars js-slideout-toggle"></i>
+                    <i class="fa fa-bars js-slideout-toggle"></i>
                     @RenderBody()
                 </main>
             </div>

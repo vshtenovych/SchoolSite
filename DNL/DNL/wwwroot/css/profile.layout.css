@@ -46,12 +46,9 @@ body {
 }
 .sidebar-menu p {
   color: white;
-  padding: 20px 10px 0 0;
+  padding: 20px 10px 0 10px;
   font-weight: bold;
   font-size: 19px;
-}
-.sidebar-menu ul {
-  margin: 0 -15px;
 }
 .sidebar-menu ul li a {
   padding: 10px;
@@ -70,7 +67,7 @@ body {
 /*--------------------*/
 /*Mobile-menu features*/
 #mobile-menu {
-  width: 350px;
+  max-width: 350px;
   min-width: 350px;
 }
 #mobile-menu p {

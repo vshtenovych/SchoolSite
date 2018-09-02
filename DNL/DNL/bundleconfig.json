@@ -105,7 +105,9 @@
       "wwwroot/lib/jquery.js",
       "wwwroot/lib/bootstrap/js/bootstrap.min.js",
       "wwwroot/js/profile.layout.js",
-      "wwwroot/lib/cropper/cropper.min.js"
+      "wwwroot/lib/cropper/cropper.min.js",
+      "wwwroot/lib/slideout/slideout.js",
+      "wwwroot/lib/slideout/slideout-param.js"
     ]
   },
   //Home
@@ -114,7 +116,8 @@
     "inputFiles": [
       "wwwroot/js/home.index.js",
       "wwwroot/lib/metro/js/metro.min.js",
-      "wwwroot/lib/touch-swipe/jquery.touchSwipe.min.js"
+      "wwwroot/lib/touch-swipe/jquery.touchSwipe.min.js",
+      "wwwroot/js/text.area-auto-height.js"
     ]
   },
   //News
