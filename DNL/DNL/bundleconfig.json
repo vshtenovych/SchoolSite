@@ -105,9 +105,7 @@
       "wwwroot/lib/jquery.js",
       "wwwroot/lib/bootstrap/js/bootstrap.min.js",
       "wwwroot/js/profile.layout.js",
-      "wwwroot/lib/cropper/cropper.min.js",
-      "wwwroot/lib/slideout/slideout.js",
-      "wwwroot/lib/slideout/slideout-param.js"
+      "wwwroot/lib/cropper/cropper.min.js"
     ]
   },
   //Home
