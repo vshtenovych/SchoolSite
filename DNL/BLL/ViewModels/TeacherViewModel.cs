@@ -24,6 +24,7 @@ namespace BLL.ViewModels
         public CategoryEnum Category { get; set; }
         public RankEnum Rank { get; set; }
         public string MethodicalAssociation { get; set; }
+        public int MethodicalAssociationId { get; set; }
 
         public List<string> Subjects { get; set; }
     }

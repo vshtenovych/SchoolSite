@@ -42,5 +42,10 @@ namespace DAL.Repositories
             if (item != null)
                 _items.Remove(item);
         }
+        public void Delete(T item)
+        {
+            if (item != null)
+                _items.Remove(item);
+        }
     }
 }

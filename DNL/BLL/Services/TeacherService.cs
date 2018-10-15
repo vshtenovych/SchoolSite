@@ -38,7 +38,28 @@ namespace BLL.Services
 
         public void UpdateTeacher(TeacherViewModel model)
         {
+            var teacher = Database.Teachers.GetAll().First(t => t.UserId == model.UserId);
 
+            teacher.RankId = (int)model.Rank;
+            teacher.CategoryId = (int)model.Category;
+            teacher.MethodicalAssociationId = model.MethodicalAssociationId;
+
+            //Subjects
+            //delete 
+            foreach (var item in Database.TeacherSubjects.GetAll())
+            {
+                if (item.TeacherId == teacher.Id)
+                    Database.TeacherSubjects.Delete(item);
+            }
+            Database.Save();
+            //update teacher's subjects
+            foreach (var item in model.Subjects)
+            {
+                var subjectId = Database.Subjects.GetAll().First(s => s.Name == item).Id;
+                Database.TeacherSubjects.Add(new TeacherSubject { TeacherId = teacher.Id, SubjectId = subjectId });
+            }
+
+            Database.Save();
         }
 
         public void AddAssociation(MethodicalAssociationViewModel model)

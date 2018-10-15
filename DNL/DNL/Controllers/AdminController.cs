@@ -125,15 +125,13 @@ namespace DNL.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(string id, string email,
-        string password)
+        public async Task<IActionResult> Edit(string id, string email, string password)
         {
             AppUser user = await userManager.FindByIdAsync(id);
             if (user != null)
             {
                 user.Email = email;
-                IdentityResult validEmail
-                = await userValidator.ValidateAsync(userManager, user);
+                IdentityResult validEmail = await userValidator.ValidateAsync(userManager, user);
                 if (!validEmail.Succeeded)
                 {
                     AddErrorsFromResult(validEmail);

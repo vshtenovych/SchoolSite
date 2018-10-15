@@ -57,6 +57,7 @@
     "inputFiles": [
       "wwwroot/css/news.allnews.css",
       "wwwroot/css/news.index.css",
+      "wwwroot/css/news.edit.create.css",
       "wwwroot/lib/cropper/cropper.min.css"
     ]
   },

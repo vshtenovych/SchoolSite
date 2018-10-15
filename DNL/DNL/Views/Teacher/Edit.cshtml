@@ -49,7 +49,6 @@
 
         <input hidden id="PictureSource" asp-for="Photo" />
         <input hidden asp-for="UserId" />
-        <input hidden asp-for="Id" />
         <div class="form-group">
             <label asp-for="Email">Емейл</label>
             <input asp-for="Email" class="form-control" placeholder="Email">
@@ -68,8 +67,8 @@
             <input asp-for="LastName" class="form-control" placeholder="Прізвище">
         </div>
         <div class="form-group">
-            <label asp-for="MethodicalAssociation" class="control-label">Обєднання</label>
-            <select asp-for="MethodicalAssociation" class="form-control" asp-items="ViewBag.MethodicalAssociationId"></select>
+            <label asp-for="MethodicalAssociationId" class="control-label">Обєднання</label>
+            <select asp-for="MethodicalAssociationId" class="form-control" asp-items="ViewBag.MethodicalAssociationId"></select>
         </div>
 
         <div class="form-group">
