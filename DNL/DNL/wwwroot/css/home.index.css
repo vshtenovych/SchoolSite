@@ -41,6 +41,7 @@ body {
   margin-top: 30px;
 }
 .about-us-button:hover {
+  color: white;
   background-color: #bf4839;
 }
 #important-links {
@@ -233,7 +234,7 @@ body {
   h5 {
     font-size: 16px;
   }
-  #about-us-button {
+  .about-us-button {
     margin-top: 0px;
   }
   #news-carousel .carousel-control-next,
@@ -253,14 +254,14 @@ body {
     font-size: 20px;
     margin-bottom: 15px;
   }
-  #about-us-button {
+  .about-us-button {
     color: white;
     font-size: 15px;
     background-color: #e36252;
     padding: 5px 30px;
     margin-top: 5px;
   }
-  #about-us-button:hover {
+  .about-us-button:hover {
     background-color: #bf4839;
   }
   #important-links img {
@@ -274,14 +275,14 @@ body {
   .header-text h1 {
     display: none;
   }
-  #about-us-button {
+  .about-us-button {
     color: white;
     font-size: 15px;
     background-color: #e36252;
     padding: 5px 30px;
     margin-top: 5px;
   }
-  #about-us-button:hover {
+  .about-us-button:hover {
     background-color: #bf4839;
   }
 }

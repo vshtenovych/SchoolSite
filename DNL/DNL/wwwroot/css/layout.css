@@ -60,7 +60,7 @@
 }
 @media screen and (min-width: 992px) {
   .navbar .dropdown-menu {
-    margin-top: 10.5px;
+    margin-top: 10px;
   }
   .navbar .dropdown:hover > .dropdown-menu {
     display: block;
