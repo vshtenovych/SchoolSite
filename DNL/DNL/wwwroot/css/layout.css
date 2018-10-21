@@ -88,7 +88,7 @@ footer row {
 .footer-nav_menu a:hover {
   color: white;
 }
-.footer-nav_menu #title {
+.footer-nav_menu .title {
   color: #cccece;
   font-weight: 500;
   margin-bottom: 10px;
