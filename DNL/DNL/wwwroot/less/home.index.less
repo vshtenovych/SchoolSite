@@ -16,6 +16,20 @@
     }
 }
 
+.overlay {
+    position: relative;
+}
+
+.overlay:after {
+    content: '\A';
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(116,125,140,0.4);
+}
+
 /*News*/
 body {
     background-color: @background_color_1;
