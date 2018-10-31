@@ -27,14 +27,13 @@ $(window).on('load', function () {
         $preloader = $('.loaderArea'),
             $loader = $preloader.find('.loader');
         $loader.fadeOut();
-        $preloader.delay(0).fadeOut('slow');
+        $preloader.delay(350).fadeOut('slow');
     }, time)
 });
 
-
 $(document).ready(function () {
     setTimeout(function () {
-        $('.non-loader-section').css("display", "block");
+        $('.non-loader-section').fadeIn("slow");
+        //$('.non-loader-section').css("display", "block");
     }, time)
-
 });
