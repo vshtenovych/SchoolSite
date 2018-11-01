@@ -38,9 +38,11 @@ body {
   width: 96.66666666666666%;
   color: #fff;
 }
-.header-text h1 {
+.header-text .dnl-title {
   font-size: 50px;
   margin-bottom: 30px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 .header-text h3 {
   font-size: 20px;
@@ -201,7 +203,7 @@ body {
   .header-text {
     top: 20%;
   }
-  .header-text h1 {
+  .header-text .dnl-title {
     font-size: 35px;
   }
   .header-text h3 {
@@ -228,7 +230,7 @@ body {
   .important-links_title {
     font-size: 19px;
   }
-  .header-text h1 {
+  .header-text .dnl-title {
     font-size: 35px;
     margin-bottom: 15px;
   }
@@ -261,7 +263,7 @@ body {
   .header-text {
     top: 20%;
   }
-  .header-text h1 {
+  .header-text .dnl-title {
     margin-top: 20px;
     font-size: 20px;
     margin-bottom: 15px;
@@ -284,7 +286,7 @@ body {
   .header-text {
     top: 30%;
   }
-  .header-text h1 {
+  .header-text .dnl-title {
     display: none;
   }
   .about-us-button {
