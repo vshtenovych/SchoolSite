@@ -38,7 +38,8 @@ body {
   width: 96.66666666666666%;
   color: #fff;
 }
-.header-text .dnl-title {
+.header-text .dnl-title,
+.header-text h1 {
   font-size: 50px;
   margin-bottom: 30px;
   font-weight: 500;
@@ -203,7 +204,8 @@ body {
   .header-text {
     top: 20%;
   }
-  .header-text .dnl-title {
+  .header-text .dnl-title,
+  .header-text h1 {
     font-size: 35px;
   }
   .header-text h3 {
@@ -230,7 +232,8 @@ body {
   .important-links_title {
     font-size: 19px;
   }
-  .header-text .dnl-title {
+  .header-text .dnl-title,
+  .header-text h1 {
     font-size: 35px;
     margin-bottom: 15px;
   }
@@ -263,7 +266,8 @@ body {
   .header-text {
     top: 20%;
   }
-  .header-text .dnl-title {
+  .header-text .dnl-title,
+  .header-text h1 {
     margin-top: 20px;
     font-size: 20px;
     margin-bottom: 15px;
@@ -286,7 +290,8 @@ body {
   .header-text {
     top: 30%;
   }
-  .header-text .dnl-title {
+  .header-text .dnl-title,
+  .header-text h1 {
     display: none;
   }
   .about-us-button {
