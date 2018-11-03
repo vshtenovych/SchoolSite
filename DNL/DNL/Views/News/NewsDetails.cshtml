@@ -11,6 +11,9 @@
 
 @{
     var newsPhoto = string.Format("data:image/gif;base64,{0}", Model.Photo);
+    ViewBag.NewsShareImage = newsPhoto;
+    ViewBag.NewsShareTitle = Model.Title;
+    ViewBag.NewsShareDescription = Model.ShortDescription;
 }
 <style>
     .rightimg {
@@ -18,7 +21,6 @@
         margin: 7px 0 7px 70px;
         height: 245px;
     }
-
 </style>
 
 <div class="container">
@@ -35,13 +37,18 @@
             @Model.LongDescription
         </p>
     </div>
+    <div class="row">
+        <div class="ya-share2" data-services="facebook,gplus,viber,telegram"></div>
+    </div>
 </div>
 
 
 @section JsFiles {
 
-    <environment include="Staging, Production">
-    </environment>
+<environment include="Staging, Production">
+    <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" async="async"></script>
+    <script src="https://yastatic.net/share2/share.js" async="async"></script>
+</environment>
 
     <environment include="Development">
     </environment>

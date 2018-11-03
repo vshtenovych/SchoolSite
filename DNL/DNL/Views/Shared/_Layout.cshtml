@@ -5,10 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="~/logo.ico" type="image/x-icon">
-    <title>Долинський науковий ліцей №1 - ДНЛ1</title>
+    <title>@(ViewBag.title == null ? "ДНЛ1" : ViewBag.title)</title>
     <meta name="description" content="Долинський науковий ліцей № 1 — найстаріший середній навчальний заклад у м. Долина Івано-Франківської області, створений у 19 ст., для учнів 5-11 класів. Одна з найкращих шкіл району за результатами ЗНО, значною кількістю призерів шкільних олімпіад на різних етапах.">
     <meta name="keywords" content="ДНЛ,ДНЛ1,Ліцей,Школа,Долина">
     <meta name="author" content="Shteniovych">
+
+    @* for news share *@
+    <meta property="og:image" content="@ViewBag.NewsShareImage" />
+    <meta property="og:title" content="@ViewBag.NewsShareTitle" />
+    <meta property="og:description" content="@ViewBag.NewsShareDescription" />
 
 
     <environment include="Staging, Production">
