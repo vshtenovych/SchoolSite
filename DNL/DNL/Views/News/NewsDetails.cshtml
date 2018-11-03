@@ -40,14 +40,20 @@
             @Model.LongDescription
         </p>
     </div>
+    <div class="row">
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_google_plus"></a>
+            <a class="a2a_button_viber"></a>
+        </div>
+    </div>
 </div>
 
 
 @section JsFiles {
 
 <environment include="Staging, Production">
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
 </environment>
 
     <environment include="Development">
