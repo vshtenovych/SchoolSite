@@ -38,7 +38,10 @@
         </p>
     </div>
     <div class="row">
-        <div class="ya-share2" data-services="facebook,gplus,viber,telegram" data-description="@Model.ShortDescription" data-image="@newsPhoto" data-title="@Model.Title"></div>
+
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_inline_share_toolbox"></div>
+
     </div>
 </div>
 
@@ -46,8 +49,8 @@
 @section JsFiles {
 
 <environment include="Staging, Production">
-    <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" async="async"></script>
-    <script src="https://yastatic.net/share2/share.js" async="async"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bdd5b759b8f5588"></script>
 </environment>
 
     <environment include="Development">
