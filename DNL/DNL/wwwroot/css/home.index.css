@@ -102,6 +102,9 @@ body {
 #news-carousel .carousel-indicators .active {
   background-color: #e36252;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .justify-content-end {
   margin-bottom: 0px;
 }
