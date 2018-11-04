@@ -80,6 +80,9 @@ body {
 #news-carousel {
   margin-bottom: 40px;
 }
+#news-carousel h5 {
+  font-size: 1.1rem;
+}
 #news-carousel a {
   color: inherit;
 }
