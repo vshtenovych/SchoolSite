@@ -20,7 +20,7 @@ $(function () {
     $("#news-item").first().addClass('active');
 });
 
-/* preloader 
+/* preloader */
 var time = 1000;
 $(window).on('load', function () {
     setTimeout(function () {
@@ -36,4 +36,4 @@ $(document).ready(function () {
         $('.non-loader-section').fadeIn("slow");
         //$('.non-loader-section').css("display", "block");
     }, time)
-});*/
+});
