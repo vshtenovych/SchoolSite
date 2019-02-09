@@ -7,7 +7,7 @@
   margin-bottom: 10px;
   font-weight: 670;
 }
-#_wells,
+#wells,
 #subjects {
   margin-top: 35px;
 }
@@ -32,6 +32,36 @@
   color: white;
   margin-top: 10px;
 }
-iframe {
-  margin-top: 10px;
+.default-color {
+  color: #212529;
+}
+.table td,
+.table th {
+  vertical-align: middle;
+  text-align: center;
+}
+.tabs li {
+  margin: 0 auto;
+}
+li .active {
+  border-bottom: 2px solid #5b76a3;
+}
+.nav-link {
+  padding: .3rem .3rem;
+}
+a {
+  transition: none;
+}
+a:hover {
+  transition: none;
+  color: #212529;
+}
+a:focus {
+  transition: none;
+}
+.tab-pane {
+  padding-top: 20px;
+}
+.tab-pane p {
+  margin-bottom: .7rem;
 }
