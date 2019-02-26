@@ -121,6 +121,10 @@ namespace DNL.Controllers
         {
             return View();
         }
+        public IActionResult MaterialBase()
+        {
+            return View();
+        }
         
     }
 }
