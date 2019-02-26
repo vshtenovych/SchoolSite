@@ -117,6 +117,10 @@ namespace DNL.Controllers
         {
             return View();
         }
+        public IActionResult CirTimetable()
+        {
+            return View();
+        }
         
     }
 }
