@@ -105,6 +105,19 @@ namespace DNL.Controllers
         {
             return View();
         }
+        public IActionResult EducationalPrograms()
+        {
+            return View();
+        }
+        public IActionResult ActivityReport()
+        {
+            return View();
+        }
+        public IActionResult inclination()
+        {
+            return View();
+        }
+        
     }
 }
 
